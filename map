@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Texas M&O Funding Variable Tree</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; height:100%; overflow:hidden; font-family: Tahoma, Verdana, sans-serif; background:#EDEDED; }
+  #toolbar {
+    position:fixed; top:0; left:0; right:0; height:64px; background:#1F3864; color:#fff;
+    display:flex; align-items:center; gap:16px; padding:0 20px; z-index:50; box-shadow:0 2px 6px rgba(0,0,0,.25);
+  }
+  #toolbar h1 { font-size:15px; font-weight:bold; margin:0; white-space:nowrap; }
+  #toolbar input[type=text] { padding:7px 10px; border-radius:5px; border:1px solid #33507e; width:220px; font-family:inherit; font-size:12px; }
+  #toolbar .btn { background:#33507e; color:#fff; border:1px solid #4a6a9e; border-radius:5px; padding:7px 11px; font-size:12px; cursor:pointer; font-family:inherit; }
+  #toolbar .btn:hover { background:#4a6a9e; }
+  #legend {
+    position:fixed; top:74px; right:16px; background:#fff; border:1px solid #ccc; border-radius:6px;
+    padding:10px 14px; font-size:11px; color:#333; z-index:40; box-shadow:0 2px 6px rgba(0,0,0,.15); max-width:250px;
+  }
+  #legend b { display:block; margin-bottom:6px; color:#1F3864; font-size:12px; }
+  .lg-row { display:flex; align-items:center; gap:6px; margin:3px 0; }
+  .lg-swatch { width:12px; height:12px; border-radius:3px; flex:none; }
+  #hint { position:fixed; bottom:12px; left:16px; background:#fff; border:1px solid #ccc; border-radius:6px; padding:8px 12px; font-size:11px; color:#555; z-index:40; box-shadow:0 2px 6px rgba(0,0,0,.15); }
+  #stage { position:absolute; top:0; left:0; cursor:grab; }
+  #stage.grabbing { cursor:grabbing; }
+  #world { position:absolute; top:0; left:0; transform-origin: 0 0; }
+  svg#edges { position:absolute; top:0; left:0; overflow:visible; }
+  .card { position:absolute; border-radius:7px; border:1.4px solid; padding:7px 9px; width:172px; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.15); font-size:10.5px; cursor:pointer; transition: opacity .15s, box-shadow .15s; }
+  .card:hover { box-shadow:0 3px 10px rgba(0,0,0,.25); }
+  .card .sym { font-family: Consolas, monospace; font-weight:bold; font-size:10.5px; }
+  .card .name { font-size:9.8px; color:#333; margin-top:2px; line-height:1.2; }
+  .card .formula { font-family: Consolas, monospace; font-size:9px; color:#555; margin-top:4px; border-top:1px dashed #ccc; padding-top:3px; line-height:1.25; }
+  .card.gap { border-style: dashed; border-color:#9C0006; }
+  .card.hub0 { width:200px; padding:12px 14px; background:#1F3864; border-color:#0d1c33; }
+  .card.hub1 { width:186px; padding:10px 12px; background:#33507e; border-color:#1F3864; }
+  .card.cluster { width:176px; padding:9px 11px; background:#e9edf5; border-color:#7f92b3; }
+  .card.hub0 .sym, .card.hub0 .name, .card.hub1 .sym, .card.hub1 .name { color:#fff; }
+  .card.hub0 .formula, .card.hub1 .formula { color:#c7d2e6; border-top-color:#4a6a9e; }
+  .card.cluster .sym { color:#1F3864; }
+  .card.cluster .name { color:#3d4a63; }
+  .dimmed { opacity:.1; }
+  .edge-path { fill:none; stroke:#9AA5B1; stroke-width:1; opacity:.35; }
+  .edge-path.bc { stroke-dasharray:4 3; stroke:#0F6E56; opacity:.4; }
+  .edge-path.cross { stroke:#993C1D; stroke-dasharray:2 3; opacity:.4; }
+  .edge-path.hi { stroke:#D85A30 !important; stroke-width:2; opacity:.95 !important; stroke-dasharray:none !important; }
+</style>
+</head>
+<body>
+
+<div id="toolbar">
+  <h1>Texas M&amp;O funding variable tree</h1>
+  <input type="text" id="search" placeholder="Find a variable...">
+  <button class="btn" id="resetBtn">Reset view</button>
+  <button class="btn" id="zoomIn">+</button>
+  <button class="btn" id="zoomOut">&minus;</button>
+</div>
+
+<div id="legend">
+  <b>Reading this</b>
+  <div class="lg-row"><span class="lg-swatch" style="background:#1F3864"></span> Root: Total M&amp;O Funding</div>
+  <div class="lg-row"><span class="lg-swatch" style="background:#33507e"></span> Aggregation hub (WADA, ADA_reg, etc.)</div>
+  <div class="lg-row"><span class="lg-swatch" style="background:#e9edf5;border:1px solid #7f92b3"></span> Category cluster</div>
+  <div class="lg-row"><span class="lg-swatch" style="background:#fff;border:1.4px dashed #9C0006"></span> Gap / placeholder</div>
+  <div class="lg-row"><span class="lg-swatch" style="background:#9AA5B1;height:2px;border-radius:0"></span> Solid = nests under this parent</div>
+  <div class="lg-row"><span class="lg-swatch" style="background:#0F6E56;height:2px;border-radius:0"></span> Dashed teal = also sums into WADA</div>
+  <div class="lg-row"><span class="lg-swatch" style="background:#993C1D;height:2px;border-radius:0"></span> Dashed rust = cross-branch input</div>
+  <div style="margin-top:6px;color:#777">Click a box to trace it. A separate "Foundational inputs" tree sits below/left - these are raw inputs used across many branches.</div>
+</div>
+
+<div id="hint">Umbrella view: hubs at top, contributing variables nest below &middot; click any box to trace it</div>
+
+<div id="stage">
+  <div id="world"><svg id="edges"></svg></div>
+</div>
+
+<script>
+// ---------- Node content ----------
+const HUBS = {
+  TotalMO:        {name:"Total M&O Funding", formula:"Tier One + Tier Two + ASF + IMTA + Other Programs", level:0},
+  TierOneTotal:   {name:"Total Cost of Tier One", formula:"sum of every Tier One allotment below", level:1},
+  TierTwoTotal:   {name:"Tier Two Guaranteed Yield", formula:"yield x WADA x tax rate, minus local share", level:1},
+  ASFTotal:       {name:"ASF Distribution", formula:"rate_asf x ADA_asf", level:1},
+  IMTATotal:      {name:"IMTA Total", formula:"rate_imta x ENR + rate_imta_eb x ENR_eb", level:1},
+  OtherProgramsTotal: {name:"Other Programs Total", formula:"sum of Other Programs line items", level:1},
+  WADA:           {name:"Weighted ADA", formula:"sum of Subch. B/C allotments / BA_adj", level:2},
+  ADA_reg:        {name:"Regular Program ADA", formula:"ADA_ref minus FTE_sped_agg minus FTE_cte_agg", level:3},
+  ADA_ref:        {name:"Refined ADA", formula:"measured, per student, six six-weeks", level:4},
+  FTE_sped_agg:   {name:"SpEd FTE (aggregate)", formula:"sum of 9 arrangement FTEs", level:4},
+  FTE_cte_agg:    {name:"CTE FTE (aggregate)", formula:"sum of 3 CTE FTE tiers", level:4},
+};
+
+const CLUSTERS = {
+  cat_regprog:   "Regular program",
+  cat_sped_direct:"SpEd (ADA-based lines)",
+  cat_dys:       "Dyslexia",
+  cat_comped:    "Compensatory ed",
+  cat_bil:       "Bilingual / ESL",
+  cat_early:     "Early education",
+  cat_gt:        "Gifted & talented",
+  cat_ccmr:      "CCMR outcomes",
+  cat_tia:       "Teacher Incentive Allotment",
+  cat_safety:    "School safety",
+  cat_trans:     "Transportation",
+  cat_dropout:   "Dropout recovery",
+  cat_otherd:    "Other Subch. D [gap]",
+  cat_rpep:      "R-PEP",
+  cat_tra:       "Teacher retention",
+  cat_ssra:      "Support staff retention",
+  cat_tier2:     "Tax-rate & yield mechanics",
+  cat_otherp:    "Other programs",
+  cat_foundational: "Foundational inputs (property, tax rate, BA)",
+};
+
+const LEAVES = {
+  w_reg:["Regular Program weight","ADA_reg x 1.00 x BA_adj",false],
+  ADJ_smallmid:["Small/Mid-Size Adj.","sliding scale vs. 1,600 / 5,000 ADA",false],
+  w_nonpublic:["Non-Public Contracts weight","ADA_nonpublic x 1.7 x BA_adj",false],
+  w_mainstream:["Mainstream weight","ADA_mainstream x 1.15 x BA_adj",false],
+  FTE_esy:["Extended Year SpEd (ESY)","$0 statewide this run",false],
+  ADJ_eci:["ECI Set-Aside","statewide deduction",false],
+  w_homebound:["Homebound weight","FTE_homebound x 5.0 x BA_adj",false],
+  w_hospital:["Hospital Class weight","FTE_hospital x 3.0 x BA_adj",false],
+  w_speech:["Speech Therapy weight","FTE_speech x 5.0 x BA_adj",false],
+  w_resource:["Resource Room weight","FTE_resource x 3.0 x BA_adj",false],
+  w_selfcontained:["Self-Contained weight","FTE_selfcontained x 3.0 x BA_adj",false],
+  w_offcampus:["Off Home Campus weight","FTE_offcampus x 2.7 x BA_adj",false],
+  w_vocadj:["Vocational Adj. weight","FTE_vocadj x 2.3 x BA_adj",false],
+  w_stateschools:["State Schools weight","FTE_stateschools x 2.8 x BA_adj",false],
+  w_residential:["Residential Care weight","FTE_residential x 4.0 x BA_adj",false],
+  w_cte1:["CTE weight (no program)","FTE_cte1 x 1.10 x BA_adj",false],
+  w_cte2:["CTE weight (levels 1-2)","FTE_cte2 x 1.28 x BA_adj",false],
+  w_cte3:["CTE weight (levels 3-4)","FTE_cte3 x 1.47 x BA_adj",false],
+  w_dys_pic37:["Dyslexia PIC 37 weight","ENR_dys37 x 0.10 x BA_adj",false],
+  w_dys_pic43:["Dyslexia PIC 43 weight","ENR_dys43 x 0.10 x BA_adj",false],
+  w_sce:["Comp. Ed weight","ENR_sce x (0.225-0.275) x BA_adj",false],
+  w_pregnant:["Pregnancy-Related weight","ENR_pregnant x 2.41 x BA_adj",false],
+  w_resid_nonedisadv:["Resid. Treatment weight","ENR x 0.20 x BA_adj",false],
+  w_eb_base:["Emergent Bilingual weight","ADA_eb x 0.10 x BA_adj",false],
+  w_eb_dl:["EB Dual Language weight","ADA_eb_dl x 0.15 x BA_adj",false],
+  w_noneb_dl2way:["Non-EB Dual Lang 2-Way","ADA_noneb_dl x 0.05 x BA_adj",false],
+  w_eb_altlang_dl:["EB Alt. Lang DL weight","additive 0.05, combines to 0.15",false],
+  w_noneb_altlang_dl:["Non-EB Alt. Lang DL weight","ADA x 0.05 x BA_adj",false],
+  cap_altlang_dl:["Alt. Lang DL statewide cap","$10M per biennium cap",false],
+  w_k3_predk:["K-3 pre-PreK weight","ADA_k3predk x 0.10 x BA_adj",false],
+  ALLOT_prek:["Full-day Pre-K allotment","BA_adj x ADA_prek (carve-out)",false],
+  w_k3_all:["K-3 All Students weight","ADA_k3all x 0.01 x BA_adj",false],
+  w_gt:["G/T weight","ADA_gt x 0.07 x BA_adj",false],
+  cap_gt_pct:["G/T enrollment cap %","5% of district ADA ceiling",false],
+  cap_gt_total:["G/T statewide cap","$100M/yr, binding this run",false],
+  ADJ_gt_setaside:["G/T Set-Aside","statewide deduction",false],
+  rate_ccmr_ed:["CCMR Ed-Disadv. bonus","$5,000 per graduate",false],
+  rate_ccmr_noted:["CCMR Not-Ed-Disadv. bonus","$3,000 per graduate",false],
+  rate_ccmr_sped:["CCMR SpEd bonus","$4,000 per graduate",false],
+  rate_tia_master:["TIA Master rate","$12,000-$36,000 per teacher",true],
+  rate_tia_exemplary:["TIA Exemplary rate","$6,000-$25,000 per teacher",true],
+  rate_tia_recognized:["TIA Recognized rate","$3,000-$15,000 per teacher",true],
+  rate_ssa_ada:["School Safety per ADA","ADA_ref x $21.10",false],
+  rate_ssa_campus:["School Safety per campus","Count_campuses x $33,540",false],
+  rate_trans_reg:["Regular transportation","Miles_reg x $1.08/mile",false],
+  rate_trans_private:["Private transportation","rate not published",true],
+  rate_trans_sped:["SpEd transportation","Miles_sped x $1.13/mile",false],
+  rate_trans_cte:["CTE transportation","rate not published",true],
+  rate_dropout:["Dropout Recovery rate","ADA_dropout x $275",false],
+  rate_resplacement:["Residential Placement rate","ADA_resplacement x $275",false],
+  rate_tuition_gap:["Tuition Allotment","rate not published",true],
+  rate_collegeprep_gap:["College Prep Reimb.","rate not published",true],
+  rate_certexam_gap:["Cert. Exam Reimb.","rate not published",true],
+  w_rpep_ed:["R-PEP Ed-Disadv. weight","ADA_rpep_ed x 1.15 x BA_adj",false],
+  w_rpep_noted:["R-PEP Non-Ed-Disadv. weight","ADA_rpep_noted x 1.11 x BA_adj",false],
+  rate_rpep_grad_ed:["R-PEP grad bonus (Ed)","$1,500 per graduate",false],
+  rate_rpep_grad_noted:["R-PEP grad bonus (Not)","$700 per graduate",false],
+  rate_rpep_grad_sped:["R-PEP grad bonus (SpEd)","$1,500 per graduate",false],
+  cap_rpep:["R-PEP proration cap","statewide cap, amount unpublished",true],
+  threshold_district_size:["District size threshold","5,000 enrolled students",false],
+  rate_tra_small_34:["Teacher Ret. small, 3-4yr","$4,000 per teacher",false],
+  rate_tra_small_5plus:["Teacher Ret. small, 5+yr","$8,000 per teacher",false],
+  rate_tra_large_34:["Teacher Ret. large, 3-4yr","$2,500 per teacher",false],
+  rate_tra_large_5plus:["Teacher Ret. large, 5+yr","$5,000 per teacher",false],
+  ADA_virtual_nonres:["Virtual/Non-Res. ADA","subtracted from ADA_reg",false],
+  ADA_adj_avg:["Adjusted Average ADA","(reg allot + small/mid) / BA_adj",false],
+  rate_ssra:["Support Staff Ret. rate","ADA_adj_avg x $45",false],
+  DTR1:["Level 1 Tax Rate (DTR1)","(MO_collect_L1 x100)/PV_curr, capped .08",false],
+  yield_L1:["Level 1 Yield rate","$129.52 per WADA per penny",false],
+  DTR2:["Level 2 Tax Rate (DTR2)","(MO_collect_L2 x100)/PV_curr",false],
+  yield_L2:["Level 2 Yield rate","$49.72 per WADA per penny",false],
+  localshare_t2:["Local Share (T2)","(PV_curr/100) x DTR",false],
+  ADA_asf:["ASF ADA","prior-year ADA (differs from ADA_ref)",false],
+  rate_asf:["ASF per-capita rate","ADA_asf x $470.813",false],
+  rate_imta:["IMTA per-student rate","ENR_peims x $174.69",false],
+  rate_imta_eb:["IMTA EB add-on","ENR_eb x $14.87",false],
+  credit_ch313:["Ch.313 Tax Credit","district-specific",true],
+  payment_tirz:["TIRZ Payment","district-specific",true],
+  aid_homestead_ceiling:["Homestead Ceiling Aid","district-specific",true],
+  aid_tax_refunds:["Ad Valorem Tax Refund Aid","district-specific",true],
+  aid_homestead_exempt:["Homestead Exemption Aid","district-specific",true],
+  aid_compression:["Compression Impact Aid","district-specific",true],
+  aid_instrmat_state:["State Instr. Materials Aid","district-specific",true],
+  aid_oer:["OER Materials Aid","district-specific",true],
+  aid_insurance_diff:["Insurance Cost Diff. Aid","regional",true],
+  aid_retention_backstop:["Retention Funding Backstop","$0 this run",false],
+  aid_adulted:["Adult Ed Funding","district-specific",true],
+  aid_uil:["UIL Non-Enrolled Allotment","$0 this run",true],
+  adj_texasfirst:["Texas First Adj.","district-specific",true],
+  rate_rdspd:["RDSPD rate","$6,925/student, $35M floor",false],
+  w_peg:["PEG weight","ADA_peg x 0.10 x BA_adj",false],
+  ALLOT_nifa:["NIFA","facility-specific, event-triggered",false],
+  rate_fiie:["FIIE rate","Count_fiie x $1,000/evaluation",false],
+  rate_basiccosts:["Basic Costs rate","ENR_peims x $106",false],
+  rate_ptech:["P-TECH rate","ADA_ptech x $150 flat",false],
+  w_fastgrowth:["Fast Growth weight","ADA_fastgrowth x 0.04 x BA_adj",true],
+  rate_mentor:["Mentor pairs rate","$/pair, amount unpublished",true],
+  ENR_peims:["PEIMS Enrollment","district-reported, distinct from ADA",false],
+  PV_prior:["Prior Tax Yr Property Value","raw district input",false],
+  PV_curr:["Current Tax Yr Property Value","PV_prior x 1.056 (LPE)",false],
+  TR_adopted:["Current Yr M&O Tax Rate","raw district input",false],
+  TR_t1:["Tier One M&O Tax Rate (TR)","used in BA compression & DTR calcs",false],
+  MCR:["Max Compressed Tax Rate","0.613, statewide constant",false],
+  MO_collect:["M&O Tax Collections","LPE = prior-yr collections x1.056",false],
+  ADJ_ifalp:["Local Share IFA Lease Purchase","subtracted from M&O collections",false],
+  ADJ_tif:["Payment to TIF","subtracted from M&O collections",false],
+  ADJ_taxrefund:["Tax Refunds Sec.26.1115(c)","added back to M&O collections",false],
+  YPP:["Yield per Penny","MO_collect / TR_adopted / 100",false],
+  BA:["Basic Allotment (base)","$6,215.00 per ADA",false],
+  BA_adj:["Basic Allotment (adjusted)","$8,400.56 per ADA",false],
+  ALLOT_reg_ada:["District Allotment per ADA","lesser of BA or BA x(TR_t1/MCR)",false],
+};
+
+// ---------- Tree structure: parentId -> [childIds] (childIds can be hub, cluster, or leaf) ----------
+const TREE = {
+  TotalMO: ["TierOneTotal","TierTwoTotal","ASFTotal","IMTATotal","OtherProgramsTotal"],
+  TierOneTotal: ["cat_regprog","cat_sped_direct","cat_dys","cat_comped","cat_bil","cat_early","cat_gt","cat_ccmr",
+                 "cat_tia","w_fastgrowth","rate_mentor","cat_safety","cat_trans","ALLOT_nifa","cat_dropout",
+                 "cat_otherd","cat_rpep","rate_fiie","cat_tra","cat_ssra","rate_basiccosts","w_peg","rate_ptech"],
+  TierTwoTotal: ["cat_tier2","WADA"],
+  WADA: ["ADA_reg"],
+  ADA_reg: ["ADA_ref","FTE_sped_agg","FTE_cte_agg"],
+  FTE_sped_agg: ["w_homebound","w_hospital","w_speech","w_resource","w_selfcontained","w_offcampus","w_vocadj","w_stateschools","w_residential"],
+  FTE_cte_agg: ["w_cte1","w_cte2","w_cte3"],
+  ASFTotal: ["ADA_asf","rate_asf"],
+  IMTATotal: ["rate_imta","rate_imta_eb"],
+  OtherProgramsTotal: ["cat_otherp"],
+  cat_regprog: ["w_reg","ADJ_smallmid"],
+  cat_sped_direct: ["w_nonpublic","w_mainstream","FTE_esy","ADJ_eci"],
+  cat_dys: ["w_dys_pic37","w_dys_pic43"],
+  cat_comped: ["w_sce","w_pregnant","w_resid_nonedisadv"],
+  cat_bil: ["w_eb_base","w_eb_dl","w_noneb_dl2way","w_eb_altlang_dl","w_noneb_altlang_dl","cap_altlang_dl"],
+  cat_early: ["w_k3_predk","ALLOT_prek","w_k3_all"],
+  cat_gt: ["w_gt","cap_gt_pct","cap_gt_total","ADJ_gt_setaside"],
+  cat_ccmr: ["rate_ccmr_ed","rate_ccmr_noted","rate_ccmr_sped"],
+  cat_tia: ["rate_tia_master","rate_tia_exemplary","rate_tia_recognized"],
+  cat_safety: ["rate_ssa_ada","rate_ssa_campus"],
+  cat_trans: ["rate_trans_reg","rate_trans_private","rate_trans_sped","rate_trans_cte"],
+  cat_dropout: ["rate_dropout","rate_resplacement"],
+  cat_otherd: ["rate_tuition_gap","rate_collegeprep_gap","rate_certexam_gap"],
+  cat_rpep: ["w_rpep_ed","w_rpep_noted","rate_rpep_grad_ed","rate_rpep_grad_noted","rate_rpep_grad_sped","cap_rpep"],
+  cat_tra: ["threshold_district_size","rate_tra_small_34","rate_tra_small_5plus","rate_tra_large_34","rate_tra_large_5plus"],
+  cat_ssra: ["ADA_virtual_nonres","ADA_adj_avg","rate_ssra"],
+  cat_tier2: ["DTR1","yield_L1","DTR2","yield_L2","localshare_t2"],
+  cat_otherp: ["credit_ch313","payment_tirz","aid_homestead_ceiling","aid_tax_refunds","aid_homestead_exempt",
+               "aid_compression","aid_instrmat_state","aid_oer","aid_insurance_diff","aid_retention_backstop",
+               "aid_adulted","aid_uil","adj_texasfirst","rate_rdspd"],
+  cat_foundational: ["ENR_peims","PV_prior","PV_curr","TR_adopted","TR_t1","MCR","MO_collect","ADJ_ifalp","ADJ_tif","ADJ_taxrefund","YPP","BA","BA_adj","ALLOT_reg_ada"],
+};
+
+// Cross-branch edges not represented by tree nesting: [from, to, style] style: "bc" (feeds WADA) or "cross"
+const CROSS_EDGES = [
+  ["ADA_ref","rate_ssa_ada","cross"], ["ADA_ref","ADJ_smallmid","cross"],
+  ["ENR_peims","rate_basiccosts","cross"], ["ENR_peims","rate_imta","cross"],
+  ["PV_curr","DTR1","cross"], ["PV_curr","DTR2","cross"], ["PV_curr","localshare_t2","cross"],
+  ["MO_collect","DTR1","cross"], ["MO_collect","DTR2","cross"], ["TR_t1","ALLOT_reg_ada","cross"],
+  ["MCR","ALLOT_reg_ada","cross"], ["BA","ALLOT_reg_ada","cross"], ["ALLOT_reg_ada","w_reg","cross"],
+  // Subchapter B/C leaves also sum into WADA (dashed teal), independent of their tree-nesting purpose
+  ["w_reg","WADA","bc"], ["w_homebound","WADA","bc"], ["w_hospital","WADA","bc"], ["w_speech","WADA","bc"],
+  ["w_resource","WADA","bc"], ["w_selfcontained","WADA","bc"], ["w_offcampus","WADA","bc"], ["w_vocadj","WADA","bc"],
+  ["w_stateschools","WADA","bc"], ["w_residential","WADA","bc"], ["w_nonpublic","WADA","bc"], ["w_mainstream","WADA","bc"],
+  ["w_cte1","WADA","bc"], ["w_cte2","WADA","bc"], ["w_cte3","WADA","bc"],
+  ["w_dys_pic37","WADA","bc"], ["w_dys_pic43","WADA","bc"], ["w_sce","WADA","bc"], ["w_pregnant","WADA","bc"],
+  ["w_resid_nonedisadv","WADA","bc"], ["w_eb_base","WADA","bc"], ["w_eb_dl","WADA","bc"], ["w_noneb_dl2way","WADA","bc"],
+  ["w_eb_altlang_dl","WADA","bc"], ["w_noneb_altlang_dl","WADA","bc"], ["w_k3_predk","WADA","bc"], ["ALLOT_prek","WADA","bc"],
+  ["w_k3_all","WADA","bc"], ["w_gt","WADA","bc"], ["rate_ccmr_ed","WADA","bc"], ["rate_ccmr_noted","WADA","bc"],
+  ["rate_ccmr_sped","WADA","bc"], ["w_fastgrowth","WADA","bc"], ["rate_tia_master","WADA","bc"],
+  ["rate_tia_exemplary","WADA","bc"], ["rate_tia_recognized","WADA","bc"], ["rate_mentor","WADA","bc"],
+  ["w_peg","WADA","bc"], ["w_rpep_ed","WADA","bc"], ["w_rpep_noted","WADA","bc"], ["rate_rpep_grad_ed","WADA","bc"],
+  ["rate_rpep_grad_noted","WADA","bc"], ["rate_rpep_grad_sped","WADA","bc"],
+];
+
+// ---------- Build node registry ----------
+const nodes = {};
+Object.entries(HUBS).forEach(([id,h])=> nodes[id] = {id, name:h.name, formula:h.formula, kind: h.level<=1?"hub0":"hub1"} );
+Object.entries(CLUSTERS).forEach(([id,label])=> nodes[id] = {id, name:label, formula:"", kind:"cluster"} );
+Object.entries(LEAVES).forEach(([id,[name,formula,isGap]])=> nodes[id] = {id, name, formula, isGap, kind:"leaf"} );
+
+// ---------- Recursive tree layout (Reingold-Tilford-ish, simplified) ----------
+const LEAF_W = 172, LEAF_GAP = 14, LEVEL_H = 118;
+function subtreeWidth(id){
+  const kids = TREE[id];
+  if(!kids) return LEAF_W;
+  let w = 0;
+  kids.forEach((k,i)=>{ w += subtreeWidth(k); if(i<kids.length-1) w += LEAF_GAP; });
+  return Math.max(w, LEAF_W);
+}
+function assignPositions(id, x, depth){
+  nodes[id].y = depth*LEVEL_H + 20;
+  const kids = TREE[id];
+  if(!kids){ nodes[id].x = x; return; }
+  let totalW = subtreeWidth(id);
+  let cursor = x - totalW/2;
+  let childXs = [];
+  kids.forEach(k=>{
+    const w = subtreeWidth(k);
+    const cx = cursor + w/2;
+    assignPositions(k, cx, depth+1);
+    childXs.push(cx);
+    cursor += w + LEAF_GAP;
+  });
+  nodes[id].x = (childXs[0]+childXs[childXs.length-1])/2;
+}
+const rootWidth = subtreeWidth("TotalMO");
+assignPositions("TotalMO", rootWidth/2 + 40, 0);
+const foundWidth = subtreeWidth("cat_foundational");
+const foundY = Math.max(...Object.values(nodes).map(n=>n.y||0)) + LEVEL_H + 40;
+assignPositions("cat_foundational", foundWidth/2 + 40, 0);
+nodes["cat_foundational"].y = foundY;
+TREE["cat_foundational"].forEach(k=>{ nodes[k].y = foundY + LEVEL_H; });
+// re-layout foundational children x positions on the foundY row
+(function(){
+  const kids = TREE["cat_foundational"];
+  let cursor = 40;
+  kids.forEach(k=>{ nodes[k].x = cursor + LEAF_W/2; cursor += LEAF_W + LEAF_GAP; nodes[k].y = foundY + LEVEL_H; });
+  nodes["cat_foundational"].x = (nodes[kids[0]].x + nodes[kids[kids.length-1]].x)/2;
+})();
+
+const worldW = Math.max(rootWidth, foundWidth) + 120;
+const worldH = foundY + LEVEL_H + 80;
+
+// ---------- Render ----------
+const world = document.getElementById("world");
+const svg = document.getElementById("edges");
+world.style.width = worldW+"px"; world.style.height = worldH+"px";
+svg.setAttribute("width", worldW); svg.setAttribute("height", worldH);
+
+function cardW(n){ return n.kind==="hub0"?200 : n.kind==="hub1"?186 : n.kind==="cluster"?176 : LEAF_W; }
+function cardH(n){ return n.kind==="leaf" ? (n.formula.length>34?62:52) : (n.kind==="cluster"?46:70); }
+
+Object.values(nodes).forEach(n=>{
+  const el = document.createElement("div");
+  const w = cardW(n), h = cardH(n);
+  el.className = "card " + n.kind + (n.isGap? " gap":"");
+  el.style.left = (n.x - w/2)+"px"; el.style.top = n.y+"px"; el.style.width=w+"px";
+  el.dataset.id = n.id;
+  const symHtml = n.kind==="cluster" ? `<div class="sym">${n.name}</div>` :
+    `<div class="sym">${n.id}</div><div class="name">${n.name}</div>`;
+  el.innerHTML = symHtml + (n.formula? `<div class="formula">${n.formula}</div>` : "");
+  el.addEventListener("click",(e)=>{ e.stopPropagation(); focusNode(n.id); });
+  world.appendChild(el);
+  n._h = h;
+});
+
+// tree edges (parent -> child), solid
+const edgeEls = [];
+function drawEdge(aId,bId,cls){
+  const a = nodes[aId], b = nodes[bId];
+  if(!a||!b) return;
+  const ax=a.x, ay=a.y+(a._h||50);
+  const bx=b.x, by=b.y;
+  const my=(ay+by)/2;
+  const p = document.createElementNS("http://www.w3.org/2000/svg","path");
+  p.setAttribute("d",`M${ax},${ay} C${ax},${my} ${bx},${my} ${bx},${by}`);
+  p.setAttribute("class","edge-path"+(cls?(" "+cls):""));
+  p.dataset.a=aId; p.dataset.b=bId;
+  svg.appendChild(p); edgeEls.push(p);
+}
+Object.entries(TREE).forEach(([parent,kids])=> kids.forEach(k=> drawEdge(parent,k,null)) );
+CROSS_EDGES.forEach(([a,b,style])=> drawEdge(a,b,style));
+
+// ---------- pan/zoom ----------
+const stage = document.getElementById("stage");
+let scale=0.42, tx=0, ty=0, dragging=false, sx=0, sy=0, otx=0, oty=0;
+function applyTransform(){ world.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`; }
+function fitInitial(){
+  const vw = window.innerWidth, vh = window.innerHeight-64;
+  scale = Math.min(vw/worldW, vh/worldH, 0.55);
+  tx = (vw - worldW*scale)/2; ty = 74; applyTransform();
+}
+stage.addEventListener("mousedown", e=>{ dragging=true; stage.classList.add("grabbing"); sx=e.clientX; sy=e.clientY; otx=tx; oty=ty; });
+window.addEventListener("mousemove", e=>{ if(!dragging) return; tx=otx+(e.clientX-sx); ty=oty+(e.clientY-sy); applyTransform(); });
+window.addEventListener("mouseup", ()=>{ dragging=false; stage.classList.remove("grabbing"); });
+stage.addEventListener("wheel", e=>{
+  e.preventDefault();
+  const delta = e.deltaY<0?1.08:0.92;
+  const rect = stage.getBoundingClientRect();
+  const mx = e.clientX-rect.left, my=e.clientY-rect.top;
+  const wx=(mx-tx)/scale, wy=(my-ty)/scale;
+  scale = Math.max(0.1, Math.min(2.2, scale*delta));
+  tx = mx-wx*scale; ty = my-wy*scale;
+  applyTransform();
+},{passive:false});
+document.getElementById("zoomIn").onclick=()=>{scale=Math.min(2.2,scale*1.2); applyTransform();};
+document.getElementById("zoomOut").onclick=()=>{scale=Math.max(0.1,scale*0.8); applyTransform();};
+document.getElementById("resetBtn").onclick=()=>{ fitInitial(); clearFocus(); };
+
+// ---------- focus ----------
+function clearFocus(){
+  document.querySelectorAll(".card").forEach(c=>c.classList.remove("dimmed"));
+  edgeEls.forEach(p=>p.classList.remove("hi"));
+}
+function focusNode(id){
+  const connected = new Set([id]);
+  edgeEls.forEach(p=>{
+    const hit = p.dataset.a===id || p.dataset.b===id;
+    p.classList.toggle("hi", hit);
+    if(hit){ connected.add(p.dataset.a); connected.add(p.dataset.b); }
+  });
+  document.querySelectorAll(".card").forEach(c=> c.classList.toggle("dimmed", !connected.has(c.dataset.id)) );
+}
+stage.addEventListener("click", ()=> clearFocus());
+document.getElementById("search").addEventListener("input",(e)=>{
+  const q = e.target.value.trim().toLowerCase();
+  if(!q){ clearFocus(); return; }
+  const match = Object.values(nodes).find(n=> n.id.toLowerCase().includes(q) || (n.name||"").toLowerCase().includes(q));
+  if(match) focusNode(match.id);
+});
+
+fitInitial();
+</script>
+</body>
+</html>
