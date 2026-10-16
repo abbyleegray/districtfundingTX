@@ -12,6 +12,12 @@
   --carveout: #993c1d;
   --overlay: #0f6e56;
   --step: #d85a30;
+  --revenue-bg: rgba(15, 110, 86, 0.06);
+  --revenue-border: rgba(15, 110, 86, 0.25);
+  --breakdown-bg: rgba(15, 110, 86, 0.16);
+  --breakdown-border: rgba(15, 110, 86, 0.4);
+  --viz-accent: #7c3aed;
+  --viz-bg: rgba(124, 58, 237, 0.08);
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;

@@ -1,0 +1,1570 @@
+{
+  "DataProc_53": {
+    "A: <500": {
+      "n": 215.0,
+      "mean_fte_per_1000": 4.74227083211551,
+      "cv_fte_per_1000": 0.814690543313134,
+      "mean_pay_per_pupil": 268.959139186187,
+      "cv_pay_per_pupil": 0.696663076487711,
+      "mean_avg_salary": 61405.1361493321,
+      "median_avg_salary": 60575.0,
+      "cv_avg_salary": 0.316061815215258
+    },
+    "B: 500-1,000": {
+      "n": 194.0,
+      "mean_fte_per_1000": 2.72701369212043,
+      "cv_fte_per_1000": 0.52374754661515,
+      "mean_pay_per_pupil": 161.066500909848,
+      "cv_pay_per_pupil": 0.530323453552011,
+      "mean_avg_salary": 60822.8695889893,
+      "median_avg_salary": 61163.0,
+      "cv_avg_salary": 0.250370743456686
+    },
+    "C: 1,000-2,000": {
+      "n": 212.0,
+      "mean_fte_per_1000": 2.48819106814937,
+      "cv_fte_per_1000": 0.459396608175648,
+      "mean_pay_per_pupil": 146.678335635259,
+      "cv_pay_per_pupil": 0.486604147075995,
+      "mean_avg_salary": 59283.1881925285,
+      "median_avg_salary": 57677.6666666667,
+      "cv_avg_salary": 0.219915697270071
+    },
+    "D: 2,000-4,000": {
+      "n": 117.0,
+      "mean_fte_per_1000": 2.13686208741392,
+      "cv_fte_per_1000": 0.377417158280836,
+      "mean_pay_per_pupil": 122.992514491796,
+      "cv_pay_per_pupil": 0.413709876290496,
+      "mean_avg_salary": 58562.7356221381,
+      "median_avg_salary": 57641.75,
+      "cv_avg_salary": 0.242170810788756
+    },
+    "E: 4,000-6,000": {
+      "n": 55.0,
+      "mean_fte_per_1000": 1.86569173212639,
+      "cv_fte_per_1000": 0.278839578084802,
+      "mean_pay_per_pupil": 111.757083183667,
+      "cv_pay_per_pupil": 0.295303255098863,
+      "mean_avg_salary": 60207.7645890943,
+      "median_avg_salary": 60550.4464285714,
+      "cv_avg_salary": 0.149767643266158
+    },
+    "F: 6,000-8,000": {
+      "n": 41.0,
+      "mean_fte_per_1000": 2.13793227091929,
+      "cv_fte_per_1000": 0.530786810086884,
+      "mean_pay_per_pupil": 123.816194293814,
+      "cv_pay_per_pupil": 0.439242320289791,
+      "mean_avg_salary": 59664.1982458444,
+      "median_avg_salary": 62790.8125,
+      "cv_avg_salary": 0.23366939708006
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 1.89353691642876,
+      "cv_fte_per_1000": 0.236197931166459,
+      "mean_pay_per_pupil": 120.530768509774,
+      "cv_pay_per_pupil": 0.212369759036921,
+      "mean_avg_salary": 64543.0215678204,
+      "median_avg_salary": 64520.6153846154,
+      "cv_avg_salary": 0.144363095607841
+    },
+    "H: 10,000-15,000": {
+      "n": 42.0,
+      "mean_fte_per_1000": 1.67074099213728,
+      "cv_fte_per_1000": 0.386550195129253,
+      "mean_pay_per_pupil": 103.464339763034,
+      "cv_pay_per_pupil": 0.401031095189712,
+      "mean_avg_salary": 62028.467828825,
+      "median_avg_salary": 61256.6310829817,
+      "cv_avg_salary": 0.154757674226564
+    },
+    "I: 15,000-20,000": {
+      "n": 13.0,
+      "mean_fte_per_1000": 1.94591743419461,
+      "cv_fte_per_1000": 0.260814639382698,
+      "mean_pay_per_pupil": 112.408726993196,
+      "cv_pay_per_pupil": 0.308638371324023,
+      "mean_avg_salary": 57748.808971082,
+      "median_avg_salary": 59578.9387755102,
+      "cv_avg_salary": 0.188275411684644
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 1.82807592856769,
+      "cv_fte_per_1000": 0.485558497872957,
+      "mean_pay_per_pupil": 119.466990236827,
+      "cv_pay_per_pupil": 0.470149042604668,
+      "mean_avg_salary": 69469.9602565054,
+      "median_avg_salary": 62613.0801041507,
+      "cv_avg_salary": 0.263908816047869
+    },
+    "K: 25,000+": {
+      "n": 54.0,
+      "mean_fte_per_1000": 1.71239680543687,
+      "cv_fte_per_1000": 0.300352007912247,
+      "mean_pay_per_pupil": 115.837213472671,
+      "cv_pay_per_pupil": 0.305505792798433,
+      "mean_avg_salary": 68527.3029813829,
+      "median_avg_salary": 67524.511875415,
+      "cv_avg_salary": 0.159928202521868
+    }
+  },
+  "Extracurr_36": {
+    "A: <500": {
+      "n": 71.0,
+      "mean_fte_per_1000": 1.59806877511838,
+      "cv_fte_per_1000": 1.19817005703069,
+      "mean_pay_per_pupil": 121.052529315814,
+      "cv_pay_per_pupil": 1.12851813186914,
+      "mean_avg_salary": 75988.4280987237,
+      "median_avg_salary": 74530.0,
+      "cv_avg_salary": 0.186277332263789
+    },
+    "B: 500-1,000": {
+      "n": 127.0,
+      "mean_fte_per_1000": 1.03724924460338,
+      "cv_fte_per_1000": 0.93288571226423,
+      "mean_pay_per_pupil": 78.2505981137962,
+      "cv_pay_per_pupil": 0.906939474301632,
+      "mean_avg_salary": 78816.1036380522,
+      "median_avg_salary": 84283.3333333333,
+      "cv_avg_salary": 0.240471615977511
+    },
+    "C: 1,000-2,000": {
+      "n": 137.0,
+      "mean_fte_per_1000": 0.52491965468391,
+      "cv_fte_per_1000": 0.867555969597314,
+      "mean_pay_per_pupil": 44.9569336990405,
+      "cv_pay_per_pupil": 0.743927262493158,
+      "mean_avg_salary": 91192.9464961521,
+      "median_avg_salary": 93150.0,
+      "cv_avg_salary": 0.249028223202639
+    },
+    "D: 2,000-4,000": {
+      "n": 99.0,
+      "mean_fte_per_1000": 0.386828962103455,
+      "cv_fte_per_1000": 1.24607611182818,
+      "mean_pay_per_pupil": 35.8984864608636,
+      "cv_pay_per_pupil": 0.870554031612335,
+      "mean_avg_salary": 104904.210440285,
+      "median_avg_salary": 103706.0,
+      "cv_avg_salary": 0.415946074211579
+    },
+    "E: 4,000-6,000": {
+      "n": 49.0,
+      "mean_fte_per_1000": 0.339772597692399,
+      "cv_fte_per_1000": 0.829970547117817,
+      "mean_pay_per_pupil": 31.2416987757364,
+      "cv_pay_per_pupil": 0.623045729335992,
+      "mean_avg_salary": 103765.097138779,
+      "median_avg_salary": 103357.0,
+      "cv_avg_salary": 0.231646019245307
+    },
+    "F: 6,000-8,000": {
+      "n": 37.0,
+      "mean_fte_per_1000": 0.29772690560046,
+      "cv_fte_per_1000": 1.13694630315596,
+      "mean_pay_per_pupil": 29.6819283483085,
+      "cv_pay_per_pupil": 1.13059123631138,
+      "mean_avg_salary": 104819.754500102,
+      "median_avg_salary": 102936.0,
+      "cv_avg_salary": 0.349198288332489
+    },
+    "G: 8,000-10,000": {
+      "n": 20.0,
+      "mean_fte_per_1000": 0.241379416725306,
+      "cv_fte_per_1000": 0.941895894819536,
+      "mean_pay_per_pupil": 24.530943614558,
+      "cv_pay_per_pupil": 0.684658717809094,
+      "mean_avg_salary": 112679.933799544,
+      "median_avg_salary": 117385.833333333,
+      "cv_avg_salary": 0.183672677575147
+    },
+    "H: 10,000-15,000": {
+      "n": 40.0,
+      "mean_fte_per_1000": 0.214047290547908,
+      "cv_fte_per_1000": 0.690092058194879,
+      "mean_pay_per_pupil": 22.6747199849555,
+      "cv_pay_per_pupil": 0.55924022139338,
+      "mean_avg_salary": 114009.142681925,
+      "median_avg_salary": 115409.169811321,
+      "cv_avg_salary": 0.161124764930279
+    },
+    "I: 15,000-20,000": {
+      "n": 13.0,
+      "mean_fte_per_1000": 0.341406170268591,
+      "cv_fte_per_1000": 0.768902004356778,
+      "mean_pay_per_pupil": 29.7744774580283,
+      "cv_pay_per_pupil": 0.656372563769142,
+      "mean_avg_salary": 98592.2841128661,
+      "median_avg_salary": 101069.8,
+      "cv_avg_salary": 0.307932099472861
+    },
+    "J: 20,000-25,000": {
+      "n": 16.0,
+      "mean_fte_per_1000": 0.148211043975052,
+      "cv_fte_per_1000": 0.635432850584617,
+      "mean_pay_per_pupil": 17.4564323776353,
+      "cv_pay_per_pupil": 0.566398340062951,
+      "mean_avg_salary": 122454.031906937,
+      "median_avg_salary": 122143.199766355,
+      "cv_avg_salary": 0.161728263124798
+    },
+    "K: 25,000+": {
+      "n": 54.0,
+      "mean_fte_per_1000": 0.15016969365849,
+      "cv_fte_per_1000": 0.740536449004518,
+      "mean_pay_per_pupil": 15.8510159443259,
+      "cv_pay_per_pupil": 0.662765733268284,
+      "mean_avg_salary": 110462.450629156,
+      "median_avg_salary": 110551.897553517,
+      "cv_avg_salary": 0.157164790995177
+    }
+  },
+  "Facilities_51": {
+    "A: <500": {
+      "n": 352.0,
+      "mean_fte_per_1000": 16.7357364587868,
+      "cv_fte_per_1000": 0.587770802124236,
+      "mean_pay_per_pupil": 566.869369491894,
+      "cv_pay_per_pupil": 0.632811670320931,
+      "mean_avg_salary": 34765.8393329646,
+      "median_avg_salary": 33104.4166666667,
+      "cv_avg_salary": 0.292208776095329
+    },
+    "B: 500-1,000": {
+      "n": 217.0,
+      "mean_fte_per_1000": 13.5151238515434,
+      "cv_fte_per_1000": 0.417564508887388,
+      "mean_pay_per_pupil": 458.686591341015,
+      "cv_pay_per_pupil": 0.443785883841201,
+      "mean_avg_salary": 35444.6812934275,
+      "median_avg_salary": 34299.2857142857,
+      "cv_avg_salary": 0.236821074161499
+    },
+    "C: 1,000-2,000": {
+      "n": 208.0,
+      "mean_fte_per_1000": 12.2531202690304,
+      "cv_fte_per_1000": 0.467950521182051,
+      "mean_pay_per_pupil": 421.813305559707,
+      "cv_pay_per_pupil": 0.453258381882369,
+      "mean_avg_salary": 36247.7290207552,
+      "median_avg_salary": 34495.084457478,
+      "cv_avg_salary": 0.216303202571731
+    },
+    "D: 2,000-4,000": {
+      "n": 116.0,
+      "mean_fte_per_1000": 11.0920990214913,
+      "cv_fte_per_1000": 0.458105312010316,
+      "mean_pay_per_pupil": 386.726905366047,
+      "cv_pay_per_pupil": 0.452643961813939,
+      "mean_avg_salary": 37098.6659979282,
+      "median_avg_salary": 35802.0964360587,
+      "cv_avg_salary": 0.275005734820636
+    },
+    "E: 4,000-6,000": {
+      "n": 55.0,
+      "mean_fte_per_1000": 9.31349345525748,
+      "cv_fte_per_1000": 0.533998646082321,
+      "mean_pay_per_pupil": 329.245392294894,
+      "cv_pay_per_pupil": 0.521629164184025,
+      "mean_avg_salary": 39699.6281125579,
+      "median_avg_salary": 35883.3523189585,
+      "cv_avg_salary": 0.356640218919081
+    },
+    "F: 6,000-8,000": {
+      "n": 40.0,
+      "mean_fte_per_1000": 10.2485987516413,
+      "cv_fte_per_1000": 0.492246010739355,
+      "mean_pay_per_pupil": 366.972215695657,
+      "cv_pay_per_pupil": 0.500474914863155,
+      "mean_avg_salary": 37581.5115292477,
+      "median_avg_salary": 37166.7162229452,
+      "cv_avg_salary": 0.242595486379778
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 9.95550171135696,
+      "cv_fte_per_1000": 0.55914589213668,
+      "mean_pay_per_pupil": 359.997972481206,
+      "cv_pay_per_pupil": 0.421406731151578,
+      "mean_avg_salary": 40001.8984860291,
+      "median_avg_salary": 38334.7509618384,
+      "cv_avg_salary": 0.217658503003264
+    },
+    "H: 10,000-15,000": {
+      "n": 42.0,
+      "mean_fte_per_1000": 9.80032357271214,
+      "cv_fte_per_1000": 0.444221734759535,
+      "mean_pay_per_pupil": 358.911074905814,
+      "cv_pay_per_pupil": 0.415260780306013,
+      "mean_avg_salary": 38408.1751865564,
+      "median_avg_salary": 37806.7255159111,
+      "cv_avg_salary": 0.17743368383154
+    },
+    "I: 15,000-20,000": {
+      "n": 13.0,
+      "mean_fte_per_1000": 8.67224261517079,
+      "cv_fte_per_1000": 0.581339280129483,
+      "mean_pay_per_pupil": 299.692360807333,
+      "cv_pay_per_pupil": 0.543342552419987,
+      "mean_avg_salary": 39769.9709383275,
+      "median_avg_salary": 33517.7358657635,
+      "cv_avg_salary": 0.388159617598984
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 8.6962420700325,
+      "cv_fte_per_1000": 0.547974165569279,
+      "mean_pay_per_pupil": 327.616890430542,
+      "cv_pay_per_pupil": 0.506174907265524,
+      "mean_avg_salary": 39228.3486410744,
+      "median_avg_salary": 37410.3849238172,
+      "cv_avg_salary": 0.221364814535033
+    },
+    "K: 25,000+": {
+      "n": 54.0,
+      "mean_fte_per_1000": 9.70226744300025,
+      "cv_fte_per_1000": 0.39340436382647,
+      "mean_pay_per_pupil": 361.778039758874,
+      "cv_pay_per_pupil": 0.377207766253138,
+      "mean_avg_salary": 39373.9993585568,
+      "median_avg_salary": 38174.6495984648,
+      "cv_avg_salary": 0.240756730147137
+    }
+  },
+  "FoodService_35": {
+    "A: <500": {
+      "n": 332.0,
+      "mean_fte_per_1000": 12.0111531271445,
+      "cv_fte_per_1000": 0.431041148606016,
+      "mean_pay_per_pupil": 328.547703500104,
+      "cv_pay_per_pupil": 0.481262460583331,
+      "mean_avg_salary": 28245.8813879025,
+      "median_avg_salary": 26561.1479181044,
+      "cv_avg_salary": 0.322020177731799
+    },
+    "B: 500-1,000": {
+      "n": 206.0,
+      "mean_fte_per_1000": 9.53959879529604,
+      "cv_fte_per_1000": 0.324411366123866,
+      "mean_pay_per_pupil": 240.93872815086,
+      "cv_pay_per_pupil": 0.3429596541334,
+      "mean_avg_salary": 25814.7273718163,
+      "median_avg_salary": 24807.9621035112,
+      "cv_avg_salary": 0.234485144678755
+    },
+    "C: 1,000-2,000": {
+      "n": 191.0,
+      "mean_fte_per_1000": 9.29330633968783,
+      "cv_fte_per_1000": 0.396889767008066,
+      "mean_pay_per_pupil": 228.984292871408,
+      "cv_pay_per_pupil": 0.390121397885996,
+      "mean_avg_salary": 26065.0704453272,
+      "median_avg_salary": 24744.6469248292,
+      "cv_avg_salary": 0.286991333222313
+    },
+    "D: 2,000-4,000": {
+      "n": 110.0,
+      "mean_fte_per_1000": 7.77219957730771,
+      "cv_fte_per_1000": 0.443291571854158,
+      "mean_pay_per_pupil": 193.187730904786,
+      "cv_pay_per_pupil": 0.45658700914953,
+      "mean_avg_salary": 26555.467012532,
+      "median_avg_salary": 24678.9213830526,
+      "cv_avg_salary": 0.300315125679126
+    },
+    "E: 4,000-6,000": {
+      "n": 53.0,
+      "mean_fte_per_1000": 6.9509318083318,
+      "cv_fte_per_1000": 0.584620412169194,
+      "mean_pay_per_pupil": 172.591468329374,
+      "cv_pay_per_pupil": 0.553067075157729,
+      "mean_avg_salary": 27982.6853494876,
+      "median_avg_salary": 25329.1587258372,
+      "cv_avg_salary": 0.289300198652021
+    },
+    "F: 6,000-8,000": {
+      "n": 39.0,
+      "mean_fte_per_1000": 7.38054453533901,
+      "cv_fte_per_1000": 0.484497247480548,
+      "mean_pay_per_pupil": 202.97577355375,
+      "cv_pay_per_pupil": 0.540427476617963,
+      "mean_avg_salary": 27978.6942232639,
+      "median_avg_salary": 26167.1387559809,
+      "cv_avg_salary": 0.263372863262119
+    },
+    "G: 8,000-10,000": {
+      "n": 20.0,
+      "mean_fte_per_1000": 8.19903815620607,
+      "cv_fte_per_1000": 0.306482840915797,
+      "mean_pay_per_pupil": 211.004761340771,
+      "cv_pay_per_pupil": 0.303056450475661,
+      "mean_avg_salary": 25986.3966977108,
+      "median_avg_salary": 24997.2463804427,
+      "cv_avg_salary": 0.115122225067346
+    },
+    "H: 10,000-15,000": {
+      "n": 38.0,
+      "mean_fte_per_1000": 7.00045413614287,
+      "cv_fte_per_1000": 0.426250082303994,
+      "mean_pay_per_pupil": 179.601524772296,
+      "cv_pay_per_pupil": 0.409819918245891,
+      "mean_avg_salary": 26766.4106817512,
+      "median_avg_salary": 25647.7751014199,
+      "cv_avg_salary": 0.211430685419163
+    },
+    "I: 15,000-20,000": {
+      "n": 12.0,
+      "mean_fte_per_1000": 7.13945742100373,
+      "cv_fte_per_1000": 0.448647667780893,
+      "mean_pay_per_pupil": 178.746882786408,
+      "cv_pay_per_pupil": 0.450042064335313,
+      "mean_avg_salary": 25851.8806278471,
+      "median_avg_salary": 25146.7322100638,
+      "cv_avg_salary": 0.139858867542525
+    },
+    "J: 20,000-25,000": {
+      "n": 15.0,
+      "mean_fte_per_1000": 7.5630390633415,
+      "cv_fte_per_1000": 0.394807799867582,
+      "mean_pay_per_pupil": 180.727133657601,
+      "cv_pay_per_pupil": 0.375129247828491,
+      "mean_avg_salary": 24727.0677203659,
+      "median_avg_salary": 25957.9492385787,
+      "cv_avg_salary": 0.148543285718037
+    },
+    "K: 25,000+": {
+      "n": 53.0,
+      "mean_fte_per_1000": 6.74991715967604,
+      "cv_fte_per_1000": 0.391433074687518,
+      "mean_pay_per_pupil": 181.655208525406,
+      "cv_pay_per_pupil": 0.417641446522804,
+      "mean_avg_salary": 28098.5495892265,
+      "median_avg_salary": 27498.8923247335,
+      "cv_avg_salary": 0.227692831153862
+    }
+  },
+  "GenAdmin_41": {
+    "A: <500": {
+      "n": 399.0,
+      "mean_fte_per_1000": 12.9389950700793,
+      "cv_fte_per_1000": 0.621018681974539,
+      "mean_pay_per_pupil": 1028.45414571992,
+      "cv_pay_per_pupil": 1.34969021264072,
+      "mean_avg_salary": 81589.3551336105,
+      "median_avg_salary": 77562.0,
+      "cv_avg_salary": 0.440688649477648
+    },
+    "B: 500-1,000": {
+      "n": 224.0,
+      "mean_fte_per_1000": 6.7798016693084,
+      "cv_fte_per_1000": 0.355627793441587,
+      "mean_pay_per_pupil": 528.799829257427,
+      "cv_pay_per_pupil": 0.316464511871961,
+      "mean_avg_salary": 81483.7918888731,
+      "median_avg_salary": 77610.7,
+      "cv_avg_salary": 0.238401838797917
+    },
+    "C: 1,000-2,000": {
+      "n": 214.0,
+      "mean_fte_per_1000": 5.69004099271873,
+      "cv_fte_per_1000": 0.334785888364466,
+      "mean_pay_per_pupil": 430.416187589759,
+      "cv_pay_per_pupil": 0.282190664771734,
+      "mean_avg_salary": 78561.4304201738,
+      "median_avg_salary": 77410.5267857143,
+      "cv_avg_salary": 0.227389761839605
+    },
+    "D: 2,000-4,000": {
+      "n": 118.0,
+      "mean_fte_per_1000": 4.63807660025529,
+      "cv_fte_per_1000": 0.380632910036675,
+      "mean_pay_per_pupil": 345.383875026421,
+      "cv_pay_per_pupil": 0.366078805105825,
+      "mean_avg_salary": 76655.7392394145,
+      "median_avg_salary": 74242.2557723704,
+      "cv_avg_salary": 0.245070578516194
+    },
+    "E: 4,000-6,000": {
+      "n": 56.0,
+      "mean_fte_per_1000": 4.30081435800933,
+      "cv_fte_per_1000": 0.303626194776855,
+      "mean_pay_per_pupil": 310.8920021548,
+      "cv_pay_per_pupil": 0.288710143426399,
+      "mean_avg_salary": 73548.9827733273,
+      "median_avg_salary": 69003.9963636364,
+      "cv_avg_salary": 0.160780185871995
+    },
+    "F: 6,000-8,000": {
+      "n": 42.0,
+      "mean_fte_per_1000": 4.42764761234565,
+      "cv_fte_per_1000": 0.526480810905823,
+      "mean_pay_per_pupil": 295.156300253168,
+      "cv_pay_per_pupil": 0.393879936066117,
+      "mean_avg_salary": 72118.5038487925,
+      "median_avg_salary": 68747.775724593,
+      "cv_avg_salary": 0.286492640747291
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 4.38576219779059,
+      "cv_fte_per_1000": 0.405071173155895,
+      "mean_pay_per_pupil": 289.298673449106,
+      "cv_pay_per_pupil": 0.222747004996478,
+      "mean_avg_salary": 70163.6868378706,
+      "median_avg_salary": 68084.3276936777,
+      "cv_avg_salary": 0.18864568918397
+    },
+    "H: 10,000-15,000": {
+      "n": 42.0,
+      "mean_fte_per_1000": 3.87087369412682,
+      "cv_fte_per_1000": 0.391570142874047,
+      "mean_pay_per_pupil": 256.008313439799,
+      "cv_pay_per_pupil": 0.314357598766162,
+      "mean_avg_salary": 69451.6061937891,
+      "median_avg_salary": 65644.3758878485,
+      "cv_avg_salary": 0.172456441785484
+    },
+    "I: 15,000-20,000": {
+      "n": 13.0,
+      "mean_fte_per_1000": 4.3086242815228,
+      "cv_fte_per_1000": 0.377489574434145,
+      "mean_pay_per_pupil": 258.755940987373,
+      "cv_pay_per_pupil": 0.311826240026581,
+      "mean_avg_salary": 64078.0571871007,
+      "median_avg_salary": 64481.3256569235,
+      "cv_avg_salary": 0.304838726094658
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 4.03269300277185,
+      "cv_fte_per_1000": 0.359532089195974,
+      "mean_pay_per_pupil": 272.287297047868,
+      "cv_pay_per_pupil": 0.293653943844141,
+      "mean_avg_salary": 71506.6800491744,
+      "median_avg_salary": 68491.8378526431,
+      "cv_avg_salary": 0.310902849518127
+    },
+    "K: 25,000+": {
+      "n": 54.0,
+      "mean_fte_per_1000": 3.56847958772447,
+      "cv_fte_per_1000": 0.294734989672677,
+      "mean_pay_per_pupil": 233.277176611217,
+      "cv_pay_per_pupil": 0.276979570237444,
+      "mean_avg_salary": 66548.8483700251,
+      "median_avg_salary": 66761.0733669548,
+      "cv_avg_salary": 0.158092655482891
+    }
+  },
+  "Guidance_31": {
+    "A: <500": {
+      "n": 276.0,
+      "mean_fte_per_1000": 5.1336498707153,
+      "cv_fte_per_1000": 1.09029729968402,
+      "mean_pay_per_pupil": 345.365601145188,
+      "cv_pay_per_pupil": 1.13862084775171,
+      "mean_avg_salary": 70287.3246920336,
+      "median_avg_salary": 67138.8440860215,
+      "cv_avg_salary": 0.311843467150093
+    },
+    "B: 500-1,000": {
+      "n": 216.0,
+      "mean_fte_per_1000": 4.64177121958955,
+      "cv_fte_per_1000": 0.993776699616815,
+      "mean_pay_per_pupil": 320.855601711451,
+      "cv_pay_per_pupil": 0.997099197379635,
+      "mean_avg_salary": 69042.4366745115,
+      "median_avg_salary": 67875.0,
+      "cv_avg_salary": 0.140655491936652
+    },
+    "C: 1,000-2,000": {
+      "n": 212.0,
+      "mean_fte_per_1000": 4.61445221710232,
+      "cv_fte_per_1000": 0.666482454923887,
+      "mean_pay_per_pupil": 317.434480408197,
+      "cv_pay_per_pupil": 0.637750295543217,
+      "mean_avg_salary": 69763.8832825953,
+      "median_avg_salary": 69237.8018873947,
+      "cv_avg_salary": 0.110306469920522
+    },
+    "D: 2,000-4,000": {
+      "n": 117.0,
+      "mean_fte_per_1000": 4.30314452617385,
+      "cv_fte_per_1000": 0.427529790978341,
+      "mean_pay_per_pupil": 308.027575975162,
+      "cv_pay_per_pupil": 0.459307905166623,
+      "mean_avg_salary": 71562.310346675,
+      "median_avg_salary": 70836.7619047619,
+      "cv_avg_salary": 0.175474397114166
+    },
+    "E: 4,000-6,000": {
+      "n": 55.0,
+      "mean_fte_per_1000": 4.1047035909777,
+      "cv_fte_per_1000": 0.295581603071328,
+      "mean_pay_per_pupil": 293.458520982817,
+      "cv_pay_per_pupil": 0.314936906106651,
+      "mean_avg_salary": 71203.7801835931,
+      "median_avg_salary": 70632.0,
+      "cv_avg_salary": 0.0911022737776737
+    },
+    "F: 6,000-8,000": {
+      "n": 41.0,
+      "mean_fte_per_1000": 3.81711996832508,
+      "cv_fte_per_1000": 0.330738168643859,
+      "mean_pay_per_pupil": 282.657786819482,
+      "cv_pay_per_pupil": 0.387457474554433,
+      "mean_avg_salary": 72751.8334004895,
+      "median_avg_salary": 74256.2204046492,
+      "cv_avg_salary": 0.165308875805334
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 4.04032582915282,
+      "cv_fte_per_1000": 0.204811292430625,
+      "mean_pay_per_pupil": 303.047657126326,
+      "cv_pay_per_pupil": 0.203911602367205,
+      "mean_avg_salary": 75124.5998964,
+      "median_avg_salary": 74682.9636202307,
+      "cv_avg_salary": 0.0585172301180209
+    },
+    "H: 10,000-15,000": {
+      "n": 42.0,
+      "mean_fte_per_1000": 3.83527322256401,
+      "cv_fte_per_1000": 0.321365418118835,
+      "mean_pay_per_pupil": 282.757988221779,
+      "cv_pay_per_pupil": 0.330001160346002,
+      "mean_avg_salary": 73597.9707417735,
+      "median_avg_salary": 73650.3687677341,
+      "cv_avg_salary": 0.077915708321007
+    },
+    "I: 15,000-20,000": {
+      "n": 13.0,
+      "mean_fte_per_1000": 3.94351683108547,
+      "cv_fte_per_1000": 0.232583281468295,
+      "mean_pay_per_pupil": 286.998999007802,
+      "cv_pay_per_pupil": 0.273217199566039,
+      "mean_avg_salary": 71687.9844941834,
+      "median_avg_salary": 74070.7134343606,
+      "cv_avg_salary": 0.123204443191112
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 4.15606613887422,
+      "cv_fte_per_1000": 0.252299391790948,
+      "mean_pay_per_pupil": 319.032153463048,
+      "cv_pay_per_pupil": 0.224659349705887,
+      "mean_avg_salary": 77125.360021412,
+      "median_avg_salary": 78272.8233830846,
+      "cv_avg_salary": 0.0824354267263323
+    },
+    "K: 25,000+": {
+      "n": 54.0,
+      "mean_fte_per_1000": 4.2354699078192,
+      "cv_fte_per_1000": 0.148301108594274,
+      "mean_pay_per_pupil": 328.473792084591,
+      "cv_pay_per_pupil": 0.172837307642498,
+      "mean_avg_salary": 77480.2946605312,
+      "median_avg_salary": 77646.5066824843,
+      "cv_avg_salary": 0.0676503096517386
+    }
+  },
+  "Health_33": {
+    "A: <500": {
+      "n": 171.0,
+      "mean_fte_per_1000": 4.2243316469625,
+      "cv_fte_per_1000": 0.855801488199546,
+      "mean_pay_per_pupil": 241.10759308263,
+      "cv_pay_per_pupil": 0.989650953059631,
+      "mean_avg_salary": 56565.0099672221,
+      "median_avg_salary": 56818.1818181818,
+      "cv_avg_salary": 0.229789839074047
+    },
+    "B: 500-1,000": {
+      "n": 187.0,
+      "mean_fte_per_1000": 2.93902045186538,
+      "cv_fte_per_1000": 1.04860244855531,
+      "mean_pay_per_pupil": 181.71696387208,
+      "cv_pay_per_pupil": 1.18243242092234,
+      "mean_avg_salary": 59810.0142416297,
+      "median_avg_salary": 60352.0,
+      "cv_avg_salary": 0.19242654567853
+    },
+    "C: 1,000-2,000": {
+      "n": 198.0,
+      "mean_fte_per_1000": 2.57853583830777,
+      "cv_fte_per_1000": 0.828613959834528,
+      "mean_pay_per_pupil": 157.72338694899,
+      "cv_pay_per_pupil": 0.868001056055855,
+      "mean_avg_salary": 61064.2501800422,
+      "median_avg_salary": 60882.0,
+      "cv_avg_salary": 0.148316901098997
+    },
+    "D: 2,000-4,000": {
+      "n": 111.0,
+      "mean_fte_per_1000": 2.66239292952159,
+      "cv_fte_per_1000": 0.660383630176842,
+      "mean_pay_per_pupil": 171.332049489106,
+      "cv_pay_per_pupil": 0.702008399395474,
+      "mean_avg_salary": 65372.037565007,
+      "median_avg_salary": 64988.3333333333,
+      "cv_avg_salary": 0.18511573606656
+    },
+    "E: 4,000-6,000": {
+      "n": 52.0,
+      "mean_fte_per_1000": 2.57066099490473,
+      "cv_fte_per_1000": 0.412530804972227,
+      "mean_pay_per_pupil": 162.024375901576,
+      "cv_pay_per_pupil": 0.39918955826339,
+      "mean_avg_salary": 63321.4613959741,
+      "median_avg_salary": 62763.9354403117,
+      "cv_avg_salary": 0.0871399096956324
+    },
+    "F: 6,000-8,000": {
+      "n": 38.0,
+      "mean_fte_per_1000": 2.77422322078538,
+      "cv_fte_per_1000": 0.351251336395942,
+      "mean_pay_per_pupil": 190.744969844231,
+      "cv_pay_per_pupil": 0.38565594877215,
+      "mean_avg_salary": 67910.1313772644,
+      "median_avg_salary": 68705.4434312732,
+      "cv_avg_salary": 0.125515875920374
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 2.64723120136686,
+      "cv_fte_per_1000": 0.308197430693504,
+      "mean_pay_per_pupil": 176.660004091149,
+      "cv_pay_per_pupil": 0.312493079085938,
+      "mean_avg_salary": 66496.8132149598,
+      "median_avg_salary": 66304.1159627774,
+      "cv_avg_salary": 0.0619938116005909
+    },
+    "H: 10,000-15,000": {
+      "n": 41.0,
+      "mean_fte_per_1000": 2.6407420354122,
+      "cv_fte_per_1000": 0.380776859634887,
+      "mean_pay_per_pupil": 177.464045443514,
+      "cv_pay_per_pupil": 0.388928557553018,
+      "mean_avg_salary": 66296.3394267081,
+      "median_avg_salary": 66335.4,
+      "cv_avg_salary": 0.116021928660468
+    },
+    "I: 15,000-20,000": {
+      "n": 13.0,
+      "mean_fte_per_1000": 2.5609164050704,
+      "cv_fte_per_1000": 0.368963866593121,
+      "mean_pay_per_pupil": 170.182324129783,
+      "cv_pay_per_pupil": 0.397969279947569,
+      "mean_avg_salary": 66133.912126317,
+      "median_avg_salary": 68143.5273077452,
+      "cv_avg_salary": 0.117712409647661
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 2.84519226513743,
+      "cv_fte_per_1000": 0.370463516522739,
+      "mean_pay_per_pupil": 195.81122279667,
+      "cv_pay_per_pupil": 0.370234456044496,
+      "mean_avg_salary": 68344.9825496252,
+      "median_avg_salary": 69038.4902263374,
+      "cv_avg_salary": 0.0887092435232501
+    },
+    "K: 25,000+": {
+      "n": 53.0,
+      "mean_fte_per_1000": 2.45629311301151,
+      "cv_fte_per_1000": 0.346930140094179,
+      "mean_pay_per_pupil": 171.20415934986,
+      "cv_pay_per_pupil": 0.348822055521414,
+      "mean_avg_salary": 70082.2748941238,
+      "median_avg_salary": 70118.0,
+      "cv_avg_salary": 0.0666382664354722
+    }
+  },
+  "InstrLead_21": {
+    "A: <500": {
+      "n": 144.0,
+      "mean_fte_per_1000": 4.3462490628604,
+      "cv_fte_per_1000": 0.796259024577071,
+      "mean_pay_per_pupil": 306.831436881208,
+      "cv_pay_per_pupil": 0.83498918669724,
+      "mean_avg_salary": 73069.3568275545,
+      "median_avg_salary": 69980.0,
+      "cv_avg_salary": 0.35595429432908
+    },
+    "B: 500-1,000": {
+      "n": 168.0,
+      "mean_fte_per_1000": 2.999094516152,
+      "cv_fte_per_1000": 0.826209900430665,
+      "mean_pay_per_pupil": 227.204794147043,
+      "cv_pay_per_pupil": 0.758501501023899,
+      "mean_avg_salary": 79486.3946092365,
+      "median_avg_salary": 77189.7333333333,
+      "cv_avg_salary": 0.236413712903898
+    },
+    "C: 1,000-2,000": {
+      "n": 193.0,
+      "mean_fte_per_1000": 2.76111718822489,
+      "cv_fte_per_1000": 0.644682954443264,
+      "mean_pay_per_pupil": 225.94585587343,
+      "cv_pay_per_pupil": 0.612992248945861,
+      "mean_avg_salary": 84381.0462625489,
+      "median_avg_salary": 82470.0,
+      "cv_avg_salary": 0.193480595882039
+    },
+    "D: 2,000-4,000": {
+      "n": 115.0,
+      "mean_fte_per_1000": 2.53602301424681,
+      "cv_fte_per_1000": 0.510748090638063,
+      "mean_pay_per_pupil": 210.07556698318,
+      "cv_pay_per_pupil": 0.509702194954883,
+      "mean_avg_salary": 84238.7215425437,
+      "median_avg_salary": 81788.3604505632,
+      "cv_avg_salary": 0.188791534322394
+    },
+    "E: 4,000-6,000": {
+      "n": 55.0,
+      "mean_fte_per_1000": 2.59807707258558,
+      "cv_fte_per_1000": 0.623605329952963,
+      "mean_pay_per_pupil": 208.883477967215,
+      "cv_pay_per_pupil": 0.578507404127028,
+      "mean_avg_salary": 84252.3108491236,
+      "median_avg_salary": 81769.6363636364,
+      "cv_avg_salary": 0.197206486461785
+    },
+    "F: 6,000-8,000": {
+      "n": 40.0,
+      "mean_fte_per_1000": 3.04109585778953,
+      "cv_fte_per_1000": 0.429450096054245,
+      "mean_pay_per_pupil": 248.506944179644,
+      "cv_pay_per_pupil": 0.434481245868761,
+      "mean_avg_salary": 83022.7218517052,
+      "median_avg_salary": 81243.5936638097,
+      "cv_avg_salary": 0.160189171418779
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 3.02318075984398,
+      "cv_fte_per_1000": 0.547816340125043,
+      "mean_pay_per_pupil": 242.656116216055,
+      "cv_pay_per_pupil": 0.477006538304286,
+      "mean_avg_salary": 81941.6622745353,
+      "median_avg_salary": 81635.0555555556,
+      "cv_avg_salary": 0.100241199751467
+    },
+    "H: 10,000-15,000": {
+      "n": 41.0,
+      "mean_fte_per_1000": 3.10475160362716,
+      "cv_fte_per_1000": 0.581130095173979,
+      "mean_pay_per_pupil": 253.823622312827,
+      "cv_pay_per_pupil": 0.553785562731249,
+      "mean_avg_salary": 83479.9941224928,
+      "median_avg_salary": 82368.875,
+      "cv_avg_salary": 0.115525292815229
+    },
+    "I: 15,000-20,000": {
+      "n": 12.0,
+      "mean_fte_per_1000": 3.56763309362074,
+      "cv_fte_per_1000": 0.432889874053874,
+      "mean_pay_per_pupil": 274.801849005906,
+      "cv_pay_per_pupil": 0.455871327900363,
+      "mean_avg_salary": 75903.1012903704,
+      "median_avg_salary": 78408.8473150597,
+      "cv_avg_salary": 0.215796620423033
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 3.33954512200763,
+      "cv_fte_per_1000": 0.604126901137003,
+      "mean_pay_per_pupil": 282.163858289866,
+      "cv_pay_per_pupil": 0.601145235719404,
+      "mean_avg_salary": 85804.3240673466,
+      "median_avg_salary": 86089.8234299006,
+      "cv_avg_salary": 0.0759591641056806
+    },
+    "K: 25,000+": {
+      "n": 54.0,
+      "mean_fte_per_1000": 3.16682655274071,
+      "cv_fte_per_1000": 0.615094777032829,
+      "mean_pay_per_pupil": 256.871554537086,
+      "cv_pay_per_pupil": 0.570717273816314,
+      "mean_avg_salary": 87415.9250839983,
+      "median_avg_salary": 83170.9674087212,
+      "cv_avg_salary": 0.193343310404591
+    }
+  },
+  "Instruction_11": {
+    "A: <500": {
+      "n": 398.0,
+      "mean_fte_per_1000": 124.43227331955,
+      "cv_fte_per_1000": 0.427833109752317,
+      "mean_pay_per_pupil": 6329.32004822483,
+      "cv_pay_per_pupil": 0.465233391207478,
+      "mean_avg_salary": 51499.8119331694,
+      "median_avg_salary": 50421.9756293132,
+      "cv_avg_salary": 0.155564425455988
+    },
+    "B: 500-1,000": {
+      "n": 224.0,
+      "mean_fte_per_1000": 102.760409906136,
+      "cv_fte_per_1000": 0.208889174820479,
+      "mean_pay_per_pupil": 5248.33426050097,
+      "cv_pay_per_pupil": 0.191807610952671,
+      "mean_avg_salary": 51690.5900439603,
+      "median_avg_salary": 50910.2528662737,
+      "cv_avg_salary": 0.133748674418269
+    },
+    "C: 1,000-2,000": {
+      "n": 214.0,
+      "mean_fte_per_1000": 91.9303548446183,
+      "cv_fte_per_1000": 0.221341998474738,
+      "mean_pay_per_pupil": 4720.48166952778,
+      "cv_pay_per_pupil": 0.181641797379739,
+      "mean_avg_salary": 52432.7445058581,
+      "median_avg_salary": 51704.2294686817,
+      "cv_avg_salary": 0.145815046030271
+    },
+    "D: 2,000-4,000": {
+      "n": 118.0,
+      "mean_fte_per_1000": 85.3491729289179,
+      "cv_fte_per_1000": 0.155605865497679,
+      "mean_pay_per_pupil": 4468.63055787497,
+      "cv_pay_per_pupil": 0.147778692808008,
+      "mean_avg_salary": 52839.6764825831,
+      "median_avg_salary": 52921.0173235321,
+      "cv_avg_salary": 0.134183691975152
+    },
+    "E: 4,000-6,000": {
+      "n": 56.0,
+      "mean_fte_per_1000": 82.5593733288453,
+      "cv_fte_per_1000": 0.141519919730297,
+      "mean_pay_per_pupil": 4325.80446777486,
+      "cv_pay_per_pupil": 0.118326528473969,
+      "mean_avg_salary": 52789.4367192714,
+      "median_avg_salary": 52418.6935942647,
+      "cv_avg_salary": 0.0985227328845918
+    },
+    "F: 6,000-8,000": {
+      "n": 41.0,
+      "mean_fte_per_1000": 80.3353404034404,
+      "cv_fte_per_1000": 0.122648677092913,
+      "mean_pay_per_pupil": 4562.3410909453,
+      "cv_pay_per_pupil": 0.132389280341822,
+      "mean_avg_salary": 56989.3957549362,
+      "median_avg_salary": 57036.1213980497,
+      "cv_avg_salary": 0.0972361975547399
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 78.997469230373,
+      "cv_fte_per_1000": 0.100508433354861,
+      "mean_pay_per_pupil": 4391.43498195819,
+      "cv_pay_per_pupil": 0.0814046247293202,
+      "mean_avg_salary": 55796.2948707635,
+      "median_avg_salary": 55643.2333514425,
+      "cv_avg_salary": 0.065546330031393
+    },
+    "H: 10,000-15,000": {
+      "n": 42.0,
+      "mean_fte_per_1000": 78.103353368913,
+      "cv_fte_per_1000": 0.232707914326846,
+      "mean_pay_per_pupil": 4272.24797092215,
+      "cv_pay_per_pupil": 0.238522997153574,
+      "mean_avg_salary": 54671.335623047,
+      "median_avg_salary": 54394.497775022,
+      "cv_avg_salary": 0.0754010749431499
+    },
+    "I: 15,000-20,000": {
+      "n": 13.0,
+      "mean_fte_per_1000": 78.9431440220499,
+      "cv_fte_per_1000": 0.109786995502599,
+      "mean_pay_per_pupil": 4346.50231440183,
+      "cv_pay_per_pupil": 0.10994463115121,
+      "mean_avg_salary": 55289.4167185382,
+      "median_avg_salary": 56348.3367729322,
+      "cv_avg_salary": 0.0924364593698975
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 77.0542538008332,
+      "cv_fte_per_1000": 0.200925730035518,
+      "mean_pay_per_pupil": 4464.01720275241,
+      "cv_pay_per_pupil": 0.204755458667292,
+      "mean_avg_salary": 57757.8406679617,
+      "median_avg_salary": 58886.1985844159,
+      "cv_avg_salary": 0.0939186396182962
+    },
+    "K: 25,000+": {
+      "n": 54.0,
+      "mean_fte_per_1000": 80.4190187062515,
+      "cv_fte_per_1000": 0.111987771773426,
+      "mean_pay_per_pupil": 4726.77739305206,
+      "cv_pay_per_pupil": 0.111365372100722,
+      "mean_avg_salary": 58881.6636905322,
+      "median_avg_salary": 58812.3418058897,
+      "cv_avg_salary": 0.0568024717595878
+    }
+  },
+  "Media_12": {
+    "A: <500": {
+      "n": 49.0,
+      "mean_fte_per_1000": 3.17464221268837,
+      "cv_fte_per_1000": 1.15454795902378,
+      "mean_pay_per_pupil": 190.885851860489,
+      "cv_pay_per_pupil": 1.15150783140283,
+      "mean_avg_salary": 64351.4455004338,
+      "median_avg_salary": 65591.3978494624,
+      "cv_avg_salary": 0.485098701035025
+    },
+    "B: 500-1,000": {
+      "n": 79.0,
+      "mean_fte_per_1000": 1.31975254639925,
+      "cv_fte_per_1000": 0.6741487491661,
+      "mean_pay_per_pupil": 89.256602198662,
+      "cv_pay_per_pupil": 0.679745587235846,
+      "mean_avg_salary": 68695.3847037126,
+      "median_avg_salary": 65732.6086956522,
+      "cv_avg_salary": 0.249848697470961
+    },
+    "C: 1,000-2,000": {
+      "n": 127.0,
+      "mean_fte_per_1000": 0.867839108595479,
+      "cv_fte_per_1000": 0.637125896373543,
+      "mean_pay_per_pupil": 58.055361237381,
+      "cv_pay_per_pupil": 0.738062179050619,
+      "mean_avg_salary": 66172.169749643,
+      "median_avg_salary": 65409.0,
+      "cv_avg_salary": 0.192808750952982
+    },
+    "D: 2,000-4,000": {
+      "n": 94.0,
+      "mean_fte_per_1000": 0.841796599033607,
+      "cv_fte_per_1000": 0.788615790606423,
+      "mean_pay_per_pupil": 56.7633912252224,
+      "cv_pay_per_pupil": 0.799711487597862,
+      "mean_avg_salary": 67663.2440933612,
+      "median_avg_salary": 67923.0131578947,
+      "cv_avg_salary": 0.170562314011987
+    },
+    "E: 4,000-6,000": {
+      "n": 48.0,
+      "mean_fte_per_1000": 0.806015365858879,
+      "cv_fte_per_1000": 0.777226888382504,
+      "mean_pay_per_pupil": 55.4970379815362,
+      "cv_pay_per_pupil": 0.798023642562811,
+      "mean_avg_salary": 68641.2884917638,
+      "median_avg_salary": 67353.8591885442,
+      "cv_avg_salary": 0.104380311848378
+    },
+    "F: 6,000-8,000": {
+      "n": 36.0,
+      "mean_fte_per_1000": 0.849538135074224,
+      "cv_fte_per_1000": 0.697667541521072,
+      "mean_pay_per_pupil": 61.6947440553646,
+      "cv_pay_per_pupil": 0.727636971903431,
+      "mean_avg_salary": 72287.4228900163,
+      "median_avg_salary": 72193.8756476684,
+      "cv_avg_salary": 0.102522216678394
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 0.997344651133143,
+      "cv_fte_per_1000": 0.491884440594043,
+      "mean_pay_per_pupil": 67.7057740909077,
+      "cv_pay_per_pupil": 0.472813953884058,
+      "mean_avg_salary": 68994.1402886915,
+      "median_avg_salary": 68183.3333333333,
+      "cv_avg_salary": 0.0704782754561656
+    },
+    "H: 10,000-15,000": {
+      "n": 39.0,
+      "mean_fte_per_1000": 0.965122060570705,
+      "cv_fte_per_1000": 0.370172085512227,
+      "mean_pay_per_pupil": 65.9699162239995,
+      "cv_pay_per_pupil": 0.392314636798613,
+      "mean_avg_salary": 68344.4428708682,
+      "median_avg_salary": 68467.5443968157,
+      "cv_avg_salary": 0.0774118910361765
+    },
+    "I: 15,000-20,000": {
+      "n": 11.0,
+      "mean_fte_per_1000": 0.887341849376433,
+      "cv_fte_per_1000": 0.593267831101061,
+      "mean_pay_per_pupil": 62.1284281449067,
+      "cv_pay_per_pupil": 0.602883885101569,
+      "mean_avg_salary": 71761.5866175821,
+      "median_avg_salary": 71016.7161226508,
+      "cv_avg_salary": 0.121247301248605
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 0.98573119014751,
+      "cv_fte_per_1000": 0.376642690536644,
+      "mean_pay_per_pupil": 71.4523691233592,
+      "cv_pay_per_pupil": 0.37934224946547,
+      "mean_avg_salary": 72161.7913221372,
+      "median_avg_salary": 72000.0,
+      "cv_avg_salary": 0.0831915382894602
+    },
+    "K: 25,000+": {
+      "n": 51.0,
+      "mean_fte_per_1000": 1.00946745187816,
+      "cv_fte_per_1000": 0.368925704444611,
+      "mean_pay_per_pupil": 72.2617932533959,
+      "cv_pay_per_pupil": 0.37469568323622,
+      "mean_avg_salary": 72110.0077944598,
+      "median_avg_salary": 72435.1755526658,
+      "cv_avg_salary": 0.0834968193528672
+    }
+  },
+  "SchoolLead_23": {
+    "A: <500": {
+      "n": 399.0,
+      "mean_fte_per_1000": 6.04318393752993,
+      "cv_fte_per_1000": 0.846483540260272,
+      "mean_pay_per_pupil": 507.872280686674,
+      "cv_pay_per_pupil": 0.973245114749144,
+      "mean_avg_salary": 87194.1807285056,
+      "median_avg_salary": 82858.0,
+      "cv_avg_salary": 0.331764255444147
+    },
+    "B: 500-1,000": {
+      "n": 223.0,
+      "mean_fte_per_1000": 4.71285198694879,
+      "cv_fte_per_1000": 0.325778991949405,
+      "mean_pay_per_pupil": 399.96840583824,
+      "cv_pay_per_pupil": 0.333264328543282,
+      "mean_avg_salary": 85330.9029641175,
+      "median_avg_salary": 84495.8246346555,
+      "cv_avg_salary": 0.113522476062035
+    },
+    "C: 1,000-2,000": {
+      "n": 214.0,
+      "mean_fte_per_1000": 4.57804600731872,
+      "cv_fte_per_1000": 0.256677368300055,
+      "mean_pay_per_pupil": 382.490512722658,
+      "cv_pay_per_pupil": 0.256705331192399,
+      "mean_avg_salary": 84140.2248749613,
+      "median_avg_salary": 82989.2045454545,
+      "cv_avg_salary": 0.10180086555873
+    },
+    "D: 2,000-4,000": {
+      "n": 118.0,
+      "mean_fte_per_1000": 4.26627394037314,
+      "cv_fte_per_1000": 0.250986686214824,
+      "mean_pay_per_pupil": 360.627142236379,
+      "cv_pay_per_pupil": 0.26818515745542,
+      "mean_avg_salary": 85092.8767152081,
+      "median_avg_salary": 84063.7410714286,
+      "cv_avg_salary": 0.13779647862398
+    },
+    "E: 4,000-6,000": {
+      "n": 56.0,
+      "mean_fte_per_1000": 3.91898693737846,
+      "cv_fte_per_1000": 0.173173166802338,
+      "mean_pay_per_pupil": 332.916920261855,
+      "cv_pay_per_pupil": 0.172627129327702,
+      "mean_avg_salary": 85230.6586142165,
+      "median_avg_salary": 85415.7003614665,
+      "cv_avg_salary": 0.0787635308765273
+    },
+    "F: 6,000-8,000": {
+      "n": 41.0,
+      "mean_fte_per_1000": 4.11487612129833,
+      "cv_fte_per_1000": 0.228166862278077,
+      "mean_pay_per_pupil": 353.481976077079,
+      "cv_pay_per_pupil": 0.239225598148927,
+      "mean_avg_salary": 86922.9411477016,
+      "median_avg_salary": 88403.9365079365,
+      "cv_avg_salary": 0.184482548119061
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 3.44389535994133,
+      "cv_fte_per_1000": 0.159317188984386,
+      "mean_pay_per_pupil": 306.883649617128,
+      "cv_pay_per_pupil": 0.157342803382649,
+      "mean_avg_salary": 89293.3881631565,
+      "median_avg_salary": 89825.1525423729,
+      "cv_avg_salary": 0.0634192739752831
+    },
+    "H: 10,000-15,000": {
+      "n": 42.0,
+      "mean_fte_per_1000": 3.49458510420593,
+      "cv_fte_per_1000": 0.25035438795591,
+      "mean_pay_per_pupil": 312.260632171683,
+      "cv_pay_per_pupil": 0.24593279115406,
+      "mean_avg_salary": 89650.281928377,
+      "median_avg_salary": 88686.5867282132,
+      "cv_avg_salary": 0.0754790806146497
+    },
+    "I: 15,000-20,000": {
+      "n": 13.0,
+      "mean_fte_per_1000": 3.67255627429503,
+      "cv_fte_per_1000": 0.120914018234965,
+      "mean_pay_per_pupil": 325.754849403166,
+      "cv_pay_per_pupil": 0.112887146144483,
+      "mean_avg_salary": 89003.4960367113,
+      "median_avg_salary": 89673.1465172138,
+      "cv_avg_salary": 0.0817583792804937
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 3.65692444643441,
+      "cv_fte_per_1000": 0.27488763958022,
+      "mean_pay_per_pupil": 348.552725365449,
+      "cv_pay_per_pupil": 0.262949782578004,
+      "mean_avg_salary": 95248.7843679442,
+      "median_avg_salary": 96193.9213483146,
+      "cv_avg_salary": 0.088515330571516
+    },
+    "K: 25,000+": {
+      "n": 54.0,
+      "mean_fte_per_1000": 3.69943292950123,
+      "cv_fte_per_1000": 0.211029351702981,
+      "mean_pay_per_pupil": 351.075485721426,
+      "cv_pay_per_pupil": 0.201944380739768,
+      "mean_avg_salary": 95210.0386240514,
+      "median_avg_salary": 94655.2935501502,
+      "cv_avg_salary": 0.0717053053454586
+    }
+  },
+  "Security_52": {
+    "A: <500": {
+      "n": 92.0,
+      "mean_fte_per_1000": 5.77372095742428,
+      "cv_fte_per_1000": 2.08856801943533,
+      "mean_pay_per_pupil": 327.697065964638,
+      "cv_pay_per_pupil": 2.25955019121985,
+      "mean_avg_salary": 56907.8674129089,
+      "median_avg_salary": 57433.5,
+      "cv_avg_salary": 0.304231339275747
+    },
+    "B: 500-1,000": {
+      "n": 96.0,
+      "mean_fte_per_1000": 2.33186290337476,
+      "cv_fte_per_1000": 0.67503683837923,
+      "mean_pay_per_pupil": 123.784988039492,
+      "cv_pay_per_pupil": 0.556741981184009,
+      "mean_avg_salary": 62773.8370097806,
+      "median_avg_salary": 58066.3461538462,
+      "cv_avg_salary": 0.90600585598015
+    },
+    "C: 1,000-2,000": {
+      "n": 109.0,
+      "mean_fte_per_1000": 2.2154348842407,
+      "cv_fte_per_1000": 0.69967270497413,
+      "mean_pay_per_pupil": 123.289347455711,
+      "cv_pay_per_pupil": 0.695351681156863,
+      "mean_avg_salary": 58961.3166849793,
+      "median_avg_salary": 59413.5,
+      "cv_avg_salary": 0.431997924957856
+    },
+    "D: 2,000-4,000": {
+      "n": 90.0,
+      "mean_fte_per_1000": 1.99498590202367,
+      "cv_fte_per_1000": 0.782072636876711,
+      "mean_pay_per_pupil": 104.632323078907,
+      "cv_pay_per_pupil": 0.673076207862081,
+      "mean_avg_salary": 58863.6199095946,
+      "median_avg_salary": 57465.6073446328,
+      "cv_avg_salary": 0.38798193547725
+    },
+    "E: 4,000-6,000": {
+      "n": 42.0,
+      "mean_fte_per_1000": 1.78269836957241,
+      "cv_fte_per_1000": 0.676824047537917,
+      "mean_pay_per_pupil": 89.0846757553592,
+      "cv_pay_per_pupil": 0.595145912399948,
+      "mean_avg_salary": 52512.8325981805,
+      "median_avg_salary": 52516.2909090909,
+      "cv_avg_salary": 0.416507228094475
+    },
+    "F: 6,000-8,000": {
+      "n": 36.0,
+      "mean_fte_per_1000": 2.4938185795647,
+      "cv_fte_per_1000": 0.716918352862,
+      "mean_pay_per_pupil": 105.870909312625,
+      "cv_pay_per_pupil": 0.602803162717039,
+      "mean_avg_salary": 45111.8073456882,
+      "median_avg_salary": 47675.7167673835,
+      "cv_avg_salary": 0.457514135412046
+    },
+    "G: 8,000-10,000": {
+      "n": 18.0,
+      "mean_fte_per_1000": 1.71006210418393,
+      "cv_fte_per_1000": 0.926849032712888,
+      "mean_pay_per_pupil": 80.4102588175344,
+      "cv_pay_per_pupil": 0.718974315458991,
+      "mean_avg_salary": 49760.0377472355,
+      "median_avg_salary": 47537.6488250329,
+      "cv_avg_salary": 0.36409044712757
+    },
+    "H: 10,000-15,000": {
+      "n": 38.0,
+      "mean_fte_per_1000": 1.85636126087354,
+      "cv_fte_per_1000": 0.859769659913961,
+      "mean_pay_per_pupil": 76.3020715440202,
+      "cv_pay_per_pupil": 0.801357695944508,
+      "mean_avg_salary": 44750.6337937832,
+      "median_avg_salary": 39587.3543981791,
+      "cv_avg_salary": 0.418039195307751
+    },
+    "I: 15,000-20,000": {
+      "n": 13.0,
+      "mean_fte_per_1000": 1.82478769923378,
+      "cv_fte_per_1000": 0.667210065431523,
+      "mean_pay_per_pupil": 77.9933736014421,
+      "cv_pay_per_pupil": 0.696209554527901,
+      "mean_avg_salary": 44240.5329092792,
+      "median_avg_salary": 44044.6558234098,
+      "cv_avg_salary": 0.362608686577497
+    },
+    "J: 20,000-25,000": {
+      "n": 17.0,
+      "mean_fte_per_1000": 1.7498384478928,
+      "cv_fte_per_1000": 0.89016033958927,
+      "mean_pay_per_pupil": 72.968520161838,
+      "cv_pay_per_pupil": 0.809839025423587,
+      "mean_avg_salary": 42093.9836905695,
+      "median_avg_salary": 41974.2753623188,
+      "cv_avg_salary": 0.32833621004952
+    },
+    "K: 25,000+": {
+      "n": 52.0,
+      "mean_fte_per_1000": 1.95204272959394,
+      "cv_fte_per_1000": 0.617858491438184,
+      "mean_pay_per_pupil": 94.0023749884137,
+      "cv_pay_per_pupil": 0.482677939497198,
+      "mean_avg_salary": 50613.0767206972,
+      "median_avg_salary": 51849.0665036006,
+      "cv_avg_salary": 0.248479797638303
+    }
+  },
+  "SocialWork_32": {
+    "A: <500": {
+      "n": 20.0,
+      "mean_fte_per_1000": 6.24535472977302,
+      "cv_fte_per_1000": 1.01567818274263,
+      "mean_pay_per_pupil": 335.738424665138,
+      "cv_pay_per_pupil": 0.946490339198,
+      "mean_avg_salary": 58235.6236707421,
+      "median_avg_salary": 54050.8,
+      "cv_avg_salary": 0.328783761172219
+    },
+    "B: 500-1,000": {
+      "n": 23.0,
+      "mean_fte_per_1000": 1.55798319595188,
+      "cv_fte_per_1000": 0.400164520921367,
+      "mean_pay_per_pupil": 90.8068417446797,
+      "cv_pay_per_pupil": 0.441940727465837,
+      "mean_avg_salary": 58745.4500077089,
+      "median_avg_salary": 61600.0,
+      "cv_avg_salary": 0.197119548336757
+    },
+    "C: 1,000-2,000": {
+      "n": 31.0,
+      "mean_fte_per_1000": 0.766081357668615,
+      "cv_fte_per_1000": 0.589034004561486,
+      "mean_pay_per_pupil": 46.0457338340282,
+      "cv_pay_per_pupil": 0.588551307020127,
+      "mean_avg_salary": 61257.0598142554,
+      "median_avg_salary": 57664.2857142857,
+      "cv_avg_salary": 0.221676882419605
+    },
+    "D: 2,000-4,000": {
+      "n": 44.0,
+      "mean_fte_per_1000": 0.622012115193667,
+      "cv_fte_per_1000": 0.875315076795852,
+      "mean_pay_per_pupil": 39.3300497220443,
+      "cv_pay_per_pupil": 0.874969878139591,
+      "mean_avg_salary": 66436.7752000047,
+      "median_avg_salary": 66699.8110285006,
+      "cv_avg_salary": 0.226046950707884
+    },
+    "E: 4,000-6,000": {
+      "n": 29.0,
+      "mean_fte_per_1000": 0.582836387843821,
+      "cv_fte_per_1000": 0.754012415781638,
+      "mean_pay_per_pupil": 36.8202256907072,
+      "cv_pay_per_pupil": 0.764194698254766,
+      "mean_avg_salary": 64028.2928536303,
+      "median_avg_salary": 66176.6666666667,
+      "cv_avg_salary": 0.221322583782162
+    },
+    "F: 6,000-8,000": {
+      "n": 24.0,
+      "mean_fte_per_1000": 0.433907614510437,
+      "cv_fte_per_1000": 0.613832936816899,
+      "mean_pay_per_pupil": 27.7074071161485,
+      "cv_pay_per_pupil": 0.651984985959126,
+      "mean_avg_salary": 65752.1835017965,
+      "median_avg_salary": 67000.8333333333,
+      "cv_avg_salary": 0.277014174194109
+    },
+    "G: 8,000-10,000": {
+      "n": 15.0,
+      "mean_fte_per_1000": 0.296111091286878,
+      "cv_fte_per_1000": 0.998570548853744,
+      "mean_pay_per_pupil": 19.9393607809428,
+      "cv_pay_per_pupil": 0.868786007412256,
+      "mean_avg_salary": 73199.3071303985,
+      "median_avg_salary": 69610.2719033233,
+      "cv_avg_salary": 0.247527655590821
+    },
+    "H: 10,000-15,000": {
+      "n": 26.0,
+      "mean_fte_per_1000": 0.385586206097035,
+      "cv_fte_per_1000": 0.94818823198164,
+      "mean_pay_per_pupil": 26.0691944820972,
+      "cv_pay_per_pupil": 0.96706233628725,
+      "mean_avg_salary": 68207.1881422415,
+      "median_avg_salary": 68026.2458366376,
+      "cv_avg_salary": 0.107889494547551
+    },
+    "I: 15,000-20,000": {
+      "n": 8.0,
+      "mean_fte_per_1000": 0.424049336222076,
+      "cv_fte_per_1000": 1.43255997797738,
+      "mean_pay_per_pupil": 26.4515734984888,
+      "cv_pay_per_pupil": 1.36493792680649,
+      "mean_avg_salary": 63514.73617328,
+      "median_avg_salary": 66661.6666666667,
+      "cv_avg_salary": 0.151805672891481
+    },
+    "J: 20,000-25,000": {
+      "n": 7.0,
+      "mean_fte_per_1000": 0.380501485531287,
+      "cv_fte_per_1000": 0.7389388030628,
+      "mean_pay_per_pupil": 25.3161552126665,
+      "cv_pay_per_pupil": 0.728473495447426,
+      "mean_avg_salary": 67431.3002494921,
+      "median_avg_salary": 66480.0,
+      "cv_avg_salary": 0.0665421836494587
+    },
+    "K: 25,000+": {
+      "n": 49.0,
+      "mean_fte_per_1000": 0.306666037217618,
+      "cv_fte_per_1000": 1.03237304019097,
+      "mean_pay_per_pupil": 20.9412195111674,
+      "cv_pay_per_pupil": 0.979447289051388,
+      "mean_avg_salary": 71139.4923728038,
+      "median_avg_salary": 70836.875,
+      "cv_avg_salary": 0.12866720850494
+    }
+  },
+  "Transport_34": {
+    "A: <500": {
+      "n": 169.0,
+      "mean_fte_per_1000": 5.74817600828761,
+      "cv_fte_per_1000": 1.66918786566111,
+      "mean_pay_per_pupil": 183.004545161224,
+      "cv_pay_per_pupil": 1.55418790708404,
+      "mean_avg_salary": 35730.3306868129,
+      "median_avg_salary": 32775.0,
+      "cv_avg_salary": 0.48827142678309
+    },
+    "B: 500-1,000": {
+      "n": 178.0,
+      "mean_fte_per_1000": 3.89213614928939,
+      "cv_fte_per_1000": 0.717341946103008,
+      "mean_pay_per_pupil": 131.070609494133,
+      "cv_pay_per_pupil": 0.725310287416095,
+      "mean_avg_salary": 35682.4131296119,
+      "median_avg_salary": 33160.5141886975,
+      "cv_avg_salary": 0.458690823189132
+    },
+    "C: 1,000-2,000": {
+      "n": 180.0,
+      "mean_fte_per_1000": 4.67101314437558,
+      "cv_fte_per_1000": 0.608090219524955,
+      "mean_pay_per_pupil": 143.710181419495,
+      "cv_pay_per_pupil": 0.696863563081856,
+      "mean_avg_salary": 32706.2297987046,
+      "median_avg_salary": 30845.4867884044,
+      "cv_avg_salary": 0.491297943626307
+    },
+    "D: 2,000-4,000": {
+      "n": 105.0,
+      "mean_fte_per_1000": 5.7380919980774,
+      "cv_fte_per_1000": 0.486439256289969,
+      "mean_pay_per_pupil": 175.242679454473,
+      "cv_pay_per_pupil": 0.500903092747174,
+      "mean_avg_salary": 33089.8778029823,
+      "median_avg_salary": 31151.2068965517,
+      "cv_avg_salary": 0.38933954904802
+    },
+    "E: 4,000-6,000": {
+      "n": 48.0,
+      "mean_fte_per_1000": 6.6640992333166,
+      "cv_fte_per_1000": 0.546259683208948,
+      "mean_pay_per_pupil": 211.013274355874,
+      "cv_pay_per_pupil": 1.1900800488486,
+      "mean_avg_salary": 31433.2860103444,
+      "median_avg_salary": 28871.4199740472,
+      "cv_avg_salary": 0.437858959030119
+    },
+    "F: 6,000-8,000": {
+      "n": 32.0,
+      "mean_fte_per_1000": 6.19574756807276,
+      "cv_fte_per_1000": 0.421502303434732,
+      "mean_pay_per_pupil": 182.826252278148,
+      "cv_pay_per_pupil": 0.453601940694383,
+      "mean_avg_salary": 30109.6253581702,
+      "median_avg_salary": 29961.6878233564,
+      "cv_avg_salary": 0.211194623043916
+    },
+    "G: 8,000-10,000": {
+      "n": 21.0,
+      "mean_fte_per_1000": 7.2855858222394,
+      "cv_fte_per_1000": 0.246055471016436,
+      "mean_pay_per_pupil": 216.986507698251,
+      "cv_pay_per_pupil": 0.255650732574024,
+      "mean_avg_salary": 30626.4424734485,
+      "median_avg_salary": 28234.0489325977,
+      "cv_avg_salary": 0.253064631892538
+    },
+    "H: 10,000-15,000": {
+      "n": 35.0,
+      "mean_fte_per_1000": 6.30491023978653,
+      "cv_fte_per_1000": 0.433083845322996,
+      "mean_pay_per_pupil": 197.56105576942,
+      "cv_pay_per_pupil": 0.460261912991235,
+      "mean_avg_salary": 31784.335926005,
+      "median_avg_salary": 32015.8358071451,
+      "cv_avg_salary": 0.153684545098508
+    },
+    "I: 15,000-20,000": {
+      "n": 11.0,
+      "mean_fte_per_1000": 5.35013680589944,
+      "cv_fte_per_1000": 0.401731404833098,
+      "mean_pay_per_pupil": 146.226085001813,
+      "cv_pay_per_pupil": 0.372279198406424,
+      "mean_avg_salary": 31069.7728332956,
+      "median_avg_salary": 28468.1617726148,
+      "cv_avg_salary": 0.375760993201663
+    },
+    "J: 20,000-25,000": {
+      "n": 15.0,
+      "mean_fte_per_1000": 5.3966355961791,
+      "cv_fte_per_1000": 0.58064449491091,
+      "mean_pay_per_pupil": 165.078697365191,
+      "cv_pay_per_pupil": 0.630483107875372,
+      "mean_avg_salary": 31706.7896368262,
+      "median_avg_salary": 29885.5611910995,
+      "cv_avg_salary": 0.250621708810747
+    },
+    "K: 25,000+": {
+      "n": 51.0,
+      "mean_fte_per_1000": 5.47231194702377,
+      "cv_fte_per_1000": 0.320259969270517,
+      "mean_pay_per_pupil": 183.312708803685,
+      "cv_pay_per_pupil": 0.337236588577668,
+      "mean_avg_salary": 34275.0877371207,
+      "median_avg_salary": 33491.9551329669,
+      "cv_avg_salary": 0.200361927631401
+    }
+  }
+}
