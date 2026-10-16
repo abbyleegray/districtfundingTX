@@ -6,6 +6,14 @@ const number = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 })
 
 const SECTION_ORDER = ['Tier One', 'Tier Two', 'ASF', 'IMTA', 'Other Programs']
 
+const SECTION_SUBTOTAL_KEY: Record<string, keyof FundingResult['subtotals']> = {
+  'Tier One': 'tierOne',
+  'Tier Two': 'tierTwo',
+  ASF: 'asf',
+  IMTA: 'imta',
+  'Other Programs': 'otherPrograms',
+}
+
 const STEP_TAGS = new Set(['Per-Campus (Step)', 'Step-Threshold'])
 
 interface Props {
@@ -53,7 +61,7 @@ export function ResultsBreakdown({ result }: Props) {
       </div>
 
       {bySection.map(({ section, items }) => {
-        const sectionTotal = items.reduce((sum, item) => sum + item.amount, 0)
+        const sectionTotal = result.subtotals[SECTION_SUBTOTAL_KEY[section]]
         const byCategory = new Map<string, typeof items>()
         for (const item of items) {
           const arr = byCategory.get(item.category) ?? []

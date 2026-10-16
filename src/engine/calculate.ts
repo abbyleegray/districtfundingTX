@@ -18,6 +18,8 @@ export interface FundingResult {
     DTR2: number
     PV_curr: number
     MO_collect: number
+    tierOneGrossTotal: number
+    localFundAssignment: number
   }
   subtotals: {
     tierOne: number
@@ -233,7 +235,7 @@ export function calculateFunding(inputs: EngineInputs, overrides?: RateOverrides
     supportStaffRetention,
     basicCosts,
   ]
-  const tierOneTotal = tierOneLineItems.reduce((sum, item) => sum + item.amount, 0)
+  const tierOneGrossTotal = tierOneLineItems.reduce((sum, item) => sum + item.amount, 0)
 
   // ---- Tier Two Guaranteed Yield ----
   const WADA = tierOneLineItems.filter((item) => item.feedsWada).reduce((sum, item) => sum + item.amount, 0) / BA_adj
@@ -246,19 +248,67 @@ export function calculateFunding(inputs: EngineInputs, overrides?: RateOverrides
   const DTR1 = Math.min(inputs.TR_t1, DTR1_cap)
   const DTR2 = Math.max(inputs.TR_adopted - inputs.TR_t1, 0)
 
-  const tier2L1 = rate('yield_L1', overrides) * WADA * (DTR1 * 100)
-  const tier2L2 = rate('yield_L2', overrides) * WADA * (DTR2 * 100)
-  const localShare = (PV_curr / 100) * (DTR1 + DTR2)
+  // Each level is floored at $0 independently — summing first and flooring once (or not at all)
+  // understates how much a property-wealthy district's local share already outstrips its guaranteed
+  // yield at a given level. See docs/source-data/V2_BUILD_SPEC.md §0.1.
+  const tier2L1Entitlement = rate('yield_L1', overrides) * WADA * (DTR1 * 100)
+  const tier2L2Entitlement = rate('yield_L2', overrides) * WADA * (DTR2 * 100)
+  const localShare_L1 = (PV_curr / 100) * DTR1
+  const localShare_L2 = (PV_curr / 100) * DTR2
+  const tier2L1Allotment = Math.max(0, tier2L1Entitlement - localShare_L1)
+  const tier2L2Allotment = Math.max(0, tier2L2Entitlement - localShare_L2)
   const tierTwoLineItems: LineItem[] = [
-    li('yield_L1', 'Level 1 (Golden Pennies) Guaranteed Yield', 'Tier Two', 'Guaranteed Yield', 'Statewide Constant (Non-Scaling)', tier2L1, false),
-    li('yield_L2', 'Level 2 (Copper Pennies) Guaranteed Yield', 'Tier Two', 'Guaranteed Yield', 'Statewide Constant (Non-Scaling)', tier2L2, false),
-    li('localshare_t2', 'Local Share (subtracted — raised by local tax pennies)', 'Tier Two', 'Guaranteed Yield', 'Derived - Formula Output', -localShare, false),
+    li(
+      'yield_L1',
+      'Level 1 (Golden Pennies) Allotment',
+      'Tier Two',
+      'Guaranteed Yield',
+      'Statewide Constant (Non-Scaling)',
+      tier2L1Allotment,
+      false,
+      `Entitlement ${tier2L1Entitlement.toFixed(0)} − local share ${localShare_L1.toFixed(0)}${tier2L1Entitlement < localShare_L1 ? ' → floored at $0 (local tax revenue at this level already exceeds the guaranteed yield).' : '.'}`,
+    ),
+    li(
+      'yield_L2',
+      'Level 2 (Copper Pennies) Allotment',
+      'Tier Two',
+      'Guaranteed Yield',
+      'Statewide Constant (Non-Scaling)',
+      tier2L2Allotment,
+      false,
+      `Entitlement ${tier2L2Entitlement.toFixed(0)} − local share ${localShare_L2.toFixed(0)}${tier2L2Entitlement < localShare_L2 ? ' → floored at $0 (local tax revenue at this level already exceeds the guaranteed yield).' : '.'}`,
+    ),
   ]
-  const tierTwoTotal = tierTwoLineItems.reduce((sum, item) => sum + item.amount, 0)
+  const tierTwoTotal = tier2L1Allotment + tier2L2Allotment
 
   // ---- ASF ----
   const asfLineItems: LineItem[] = [li('rate_asf', 'ASF per-capita distribution', 'ASF', 'Available School Fund', 'Linear - Per Unit', inputs.ADA_asf * rate('rate_asf', overrides), false, 'Uses prior-year ADA, not ADA_ref.')]
   const asfTotal = asfLineItems.reduce((sum, item) => sum + item.amount, 0)
+
+  // ---- Tier One: net the gross entitlement against Local Fund Assignment and ASF, floor at $0 ----
+  // Local Fund Assignment is the local tax revenue the district raises at the compressed Tier One
+  // rate — not a user input, but necessary here to compute the state's actual Tier One share.
+  // See docs/source-data/V2_BUILD_SPEC.md §0.2.
+  const localFundAssignment = (PV_curr / 100) * inputs.TR_t1
+  const tierOneNetOfLocal = tierOneGrossTotal - localFundAssignment - asfTotal
+  const tierOneTotal = Math.max(0, tierOneNetOfLocal)
+  tierOneLineItems.push(
+    li(
+      'local_fund_assignment',
+      'Local Fund Assignment (local property tax revenue — not state aid)',
+      'Tier One',
+      'Regular Program',
+      'Derived - Formula Output',
+      -localFundAssignment,
+      false,
+      `Also netted against ASF ($${asfTotal.toFixed(0)}) when determining the state's Tier One share.${tierOneNetOfLocal < 0 ? ' This district\'s local tax revenue plus ASF already exceeds its gross Tier One entitlement, so the state share is correctly floored at $0.' : ''}`,
+    ),
+  )
+  if (tierOneNetOfLocal < 0) {
+    warnings.push(
+      `Local Fund Assignment ($${localFundAssignment.toLocaleString(undefined, { maximumFractionDigits: 0 })}) plus ASF ($${asfTotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}) exceeds the gross Tier One entitlement ($${tierOneGrossTotal.toLocaleString(undefined, { maximumFractionDigits: 0 })}) — this district's Tier One costs are fully covered by local property tax revenue, so the state's Tier One share is correctly $0.`,
+    )
+  }
 
   // ---- IMTA ----
   const imtaLineItems: LineItem[] = [
@@ -292,6 +342,8 @@ export function calculateFunding(inputs: EngineInputs, overrides?: RateOverrides
       DTR2,
       PV_curr,
       MO_collect,
+      tierOneGrossTotal,
+      localFundAssignment,
     },
     subtotals: {
       tierOne: tierOneTotal,
