@@ -69,7 +69,7 @@ export function ResultsBreakdown({ result }: Props) {
           byCategory.set(item.category, arr)
         }
         return (
-          <details key={section} open className="result-section">
+          <details key={section} className="result-section">
             <summary>
               {section} <span className="section-total">{currency.format(sectionTotal)}</span>
             </summary>
