@@ -344,7 +344,8 @@
   padding: 8px 10px;
 }
 
-.expenditure-total {
+.expenditure-total,
+.federal-total {
   margin-top: 18px;
 }
 

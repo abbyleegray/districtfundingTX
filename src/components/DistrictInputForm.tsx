@@ -199,6 +199,12 @@ export function DistrictInputForm({ profile, onChange }: Props) {
           <NumberField label="R-PEP graduates (Ed-Disadv.)" value={profile.rpep.gradEd} onChange={(v) => setIn('rpep', { gradEd: v })} />
           <NumberField label="R-PEP graduates (Not Ed-Disadv.)" value={profile.rpep.gradNoted} onChange={(v) => setIn('rpep', { gradNoted: v })} />
           <NumberField label="R-PEP graduates (SpEd)" value={profile.rpep.gradSped} onChange={(v) => setIn('rpep', { gradSped: v })} />
+          {profile.rpep.edDisadvPct + profile.rpep.nonEdDisadvPct > 100 ? (
+            <div className="section-note tag-warning">
+              Ed-Disadvantaged + Non-Ed-Disadvantaged ({(profile.rpep.edDisadvPct + profile.rpep.nonEdDisadvPct).toFixed(1)}%) exceeds 100% of
+              enrollment — these are mutually exclusive categories and can't overlap.
+            </div>
+          ) : null}
         </div>
       </details>
 
@@ -226,6 +232,12 @@ export function DistrictInputForm({ profile, onChange }: Props) {
           <NumberField label="Ed-Disadvantaged graduates" value={profile.graduates.edDisadv} onChange={(v) => setIn('graduates', { edDisadv: v })} />
           <NumberField label="Not Ed-Disadvantaged graduates" value={profile.graduates.notEdDisadv} onChange={(v) => setIn('graduates', { notEdDisadv: v })} />
           <NumberField label="Special Education graduates" value={profile.graduates.sped} onChange={(v) => setIn('graduates', { sped: v })} />
+          {profile.graduates.edDisadv + profile.graduates.notEdDisadv + profile.graduates.sped > profile.enrollment ? (
+            <div className="section-note tag-warning">
+              The three graduate categories ({(profile.graduates.edDisadv + profile.graduates.notEdDisadv + profile.graduates.sped).toLocaleString()})
+              exceed total enrollment ({profile.enrollment.toLocaleString()}) — a graduating class can't be larger than your district.
+            </div>
+          ) : null}
         </div>
       </details>
 

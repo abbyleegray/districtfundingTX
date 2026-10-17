@@ -3,16 +3,20 @@ import './App.css'
 import { DistrictInputForm } from './components/DistrictInputForm'
 import { ExpenditureBreakdown } from './components/ExpenditureBreakdown'
 import { ExpenditureInputForm } from './components/ExpenditureInputForm'
+import { FederalRevenueBreakdown, FederalRevenueInputForm } from './components/FederalRevenueSection'
 import { MarginalCostChart } from './components/MarginalCostChart'
 import { ResultsBreakdown } from './components/ResultsBreakdown'
 import { calculateFunding } from './engine/calculate'
 import { calculateExpenditures, type ExpenditureContext } from './engine/expenditure'
 import { defaultExpenditureProfile, type ExpenditureProfile } from './engine/expenditureProfile'
+import { DEFAULT_FEDERAL_RATES, type FederalRevenueInputs, type FederalRevenueRates } from './engine/federal'
 import { buildEngineInputsFromSynthetic, defaultSyntheticProfile, type SyntheticDistrictProfile } from './engine/synthetic'
 
 function App() {
   const [profile, setProfile] = useState<SyntheticDistrictProfile>(defaultSyntheticProfile)
   const [expenditureProfile, setExpenditureProfile] = useState<ExpenditureProfile>(defaultExpenditureProfile)
+  const [federalRates, setFederalRates] = useState<FederalRevenueRates>(DEFAULT_FEDERAL_RATES)
+  const [impactAidEligible, setImpactAidEligible] = useState(false)
   const [tab, setTab] = useState<'results' | 'chart'>('results')
   const [headerTab, setHeaderTab] = useState<'simulator' | 'placeholder'>('simulator')
 
@@ -30,6 +34,16 @@ function App() {
   const expenditureResult = useMemo(
     () => calculateExpenditures(expenditureContext, expenditureProfile.overrides),
     [expenditureContext, expenditureProfile.overrides],
+  )
+
+  const federalInputs: FederalRevenueInputs = useMemo(
+    () => ({
+      enrollment: profile.enrollment,
+      econDisadvPct: profile.compEd.concentrationPct,
+      fteSpedAgg: result.intermediates.FTE_sped_agg,
+      impactAidEligible,
+    }),
+    [profile.enrollment, profile.compEd.concentrationPct, result.intermediates.FTE_sped_agg, impactAidEligible],
   )
 
   return (
@@ -68,6 +82,13 @@ function App() {
             <DistrictInputForm profile={profile} onChange={setProfile} />
             <h2 className="expenditure-heading">Expenditure builder</h2>
             <ExpenditureInputForm profile={expenditureProfile} context={expenditureContext} onChange={setExpenditureProfile} />
+            <h2 className="expenditure-heading">Federal revenue (estimated)</h2>
+            <FederalRevenueInputForm
+              inputs={federalInputs}
+              rates={federalRates}
+              onRatesChange={setFederalRates}
+              onImpactAidChange={setImpactAidEligible}
+            />
           </section>
           <section className="panel panel-results">
             <div className="panel-tabs">
@@ -82,6 +103,7 @@ function App() {
               <>
                 <ResultsBreakdown result={result} />
                 <ExpenditureBreakdown result={expenditureResult} />
+                <FederalRevenueBreakdown inputs={federalInputs} rates={federalRates} />
               </>
             ) : (
               <MarginalCostChart profile={profile} />
